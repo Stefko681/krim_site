@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+export const runtime = 'edge';
 import { themes } from "@/lib/data";
 import { ChevronRight, ChevronLeft, CheckCircle, Plus, Trash2 } from "lucide-react";
 
@@ -48,7 +49,7 @@ export default function ConfiguratorPage() {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(form),
-    }).catch(() => {});
+    }).catch(() => { });
     setSubmitted(true);
   };
 
