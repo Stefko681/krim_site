@@ -33,6 +33,22 @@ body {
   overflow-x: hidden;
 }
 
+@media (max-width: 768px) {
+  html {
+    font-size: 17.5px; /* Base rem scaling */
+  }
+  
+  body {
+    line-height: 1.7; /* More breathing room */
+  }
+  
+  /* Make sure inputs and buttons don't zoom on iOS and are readable */
+  input, select, textarea, button {
+    font-size: 16px !important; 
+  }
+}
+
+
 /* Typography */
 .font-typewriter {
   font-family: 'Special Elite', cursive;

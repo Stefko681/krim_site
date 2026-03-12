@@ -16,6 +16,7 @@ export default function Navbar() {
   const links = [
     { href: "/shop", label: "Досиета" },
     { href: "/configurator", label: "Custom Случай" },
+    { href: "/guess", label: "Познай Убиеца" },
     { href: "/portal", label: "Детективски Портал" },
   ];
 

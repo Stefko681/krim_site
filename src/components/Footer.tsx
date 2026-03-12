@@ -115,10 +115,10 @@ export default function Footer() {
             Контакт
           </h4>
           <p style={{ color: "#8892A4", fontSize: "0.9rem", marginBottom: "0.5rem" }}>
-            📧 kontakt@dosie.bg
+            📧kriminnal2@gmail.com
           </p>
           <p style={{ color: "#8892A4", fontSize: "0.9rem", marginBottom: "0.5rem" }}>
-            📱 +359 88 123 4567
+            📱 +359 88 764 9359
           </p>
           <p style={{ color: "#8892A4", fontSize: "0.9rem" }}>
             📍 София, България

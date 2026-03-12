@@ -1135,6 +1135,184 @@ function CTABanner() {
   );
 }
 
+// ── GUESS TEASER ─────────────────────────────────────────────────────────
+function GuessTeaser() {
+  return (
+    <section
+      style={{
+        maxWidth: "1200px",
+        margin: "8rem auto 0",
+        padding: "0 1.5rem",
+      }}
+    >
+      <div
+        style={{
+          background: "linear-gradient(135deg, #12050a 0%, #1F2833 50%, #0d1a0d 100%)",
+          border: "1px solid rgba(220,20,60,0.2)",
+          borderRadius: "8px",
+          padding: "3.5rem 2.5rem",
+          display: "flex",
+          alignItems: "center",
+          gap: "3rem",
+          flexWrap: "wrap",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
+        {/* Background glow */}
+        <div
+          style={{
+            position: "absolute",
+            top: "-60px",
+            right: "-60px",
+            width: "300px",
+            height: "300px",
+            background: "radial-gradient(circle, rgba(220,20,60,0.1) 0%, transparent 70%)",
+            pointerEvents: "none",
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            bottom: "-60px",
+            left: "-40px",
+            width: "250px",
+            height: "250px",
+            background: "radial-gradient(circle, rgba(21,128,61,0.08) 0%, transparent 70%)",
+            pointerEvents: "none",
+          }}
+        />
+
+        {/* Badge / icon side */}
+        <div style={{ flexShrink: 0, textAlign: "center" }}>
+          <div
+            style={{
+              width: "100px",
+              height: "100px",
+              borderRadius: "50%",
+              background: "rgba(220,20,60,0.1)",
+              border: "2px solid rgba(220,20,60,0.3)",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              fontSize: "2.8rem",
+              margin: "0 auto 1rem",
+              boxShadow: "0 0 30px rgba(220,20,60,0.15)",
+            }}
+          >
+            🎯
+          </div>
+          <div
+            style={{
+              border: "2px solid rgba(220,20,60,0.5)",
+              color: "#DC143C",
+              fontFamily: "'Special Elite', cursive",
+              fontSize: "0.65rem",
+              letterSpacing: "0.12em",
+              padding: "3px 10px",
+              transform: "rotate(-3deg)",
+              display: "inline-block",
+            }}
+          >
+            БЕЗПЛАТНО
+          </div>
+        </div>
+
+        {/* Text content */}
+        <div style={{ flex: 1, minWidth: "280px" }}>
+          <p
+            style={{
+              fontFamily: "'Special Elite', cursive",
+              color: "#DC143C",
+              fontSize: "0.75rem",
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              marginBottom: "0.6rem",
+            }}
+          >
+            ⬥ Детективско Предизвикателство ⬥
+          </p>
+          <h2
+            style={{
+              fontFamily: "'Special Elite', cursive",
+              fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)",
+              color: "#E8E8E8",
+              marginBottom: "0.75rem",
+              lineHeight: 1.2,
+            }}
+          >
+            Познай Убиеца
+          </h2>
+          <p
+            style={{
+              color: "#8892A4",
+              lineHeight: 1.7,
+              marginBottom: "1.5rem",
+              maxWidth: "520px",
+              fontSize: "0.95rem",
+            }}
+          >
+            Избери случай от нашия каталог. Прочети заподозрените. Посочи убиеца и мотива.
+            Виж дали инстинктът ти е на ниво детектив — без да купуваш нищо.
+          </p>
+
+          <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", alignItems: "center" }}>
+            <Link
+              href="/guess"
+              style={{
+                background: "linear-gradient(135deg, #DC143C, #8B0000)",
+                color: "white",
+                textDecoration: "none",
+                padding: "13px 30px",
+                borderRadius: "4px",
+                fontFamily: "'Special Elite', cursive",
+                fontSize: "1rem",
+                letterSpacing: "0.06em",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "8px",
+                transition: "all 0.3s",
+                boxShadow: "0 4px 20px rgba(220,20,60,0.35)",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "translateY(-2px)";
+                e.currentTarget.style.boxShadow = "0 8px 28px rgba(220,20,60,0.5)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "translateY(0)";
+                e.currentTarget.style.boxShadow = "0 4px 20px rgba(220,20,60,0.35)";
+              }}
+            >
+              ⚖️ Влез в Разследването
+            </Link>
+            <span style={{ color: "#8892A4", fontSize: "0.82rem", fontFamily: "'Special Elite', cursive" }}>
+              3 случая · без регистрация
+            </span>
+          </div>
+        </div>
+
+        {/* Mini stamp decoration */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: "20px",
+            right: "24px",
+            border: "3px solid rgba(21,128,61,0.3)",
+            color: "rgba(21,128,61,0.4)",
+            fontFamily: "'Special Elite', cursive",
+            fontSize: "0.65rem",
+            letterSpacing: "0.1em",
+            padding: "4px 10px",
+            transform: "rotate(8deg)",
+          }}
+        >
+          СЛУЧАЯТ Е ЗАКРИТ?
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ── PAGE ──────────────────────────────────────────────────────────────────
 export default function HomePage() {
   return (
@@ -1142,6 +1320,7 @@ export default function HomePage() {
       <HeroSection />
       <LeadMagnet />
       <FeaturedCases />
+      <GuessTeaser />
       <HowItWorks />
       <Testimonials />
       <CTABanner />
