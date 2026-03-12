@@ -5,28 +5,13 @@ import { AlertTriangle, Target, ChevronDown } from "lucide-react";
 
 type ResultState = "idle" | "correct" | "wrong";
 
-const customCase = {
-  id: "4",
-  slug: "koi-otvleche-iskren",
-  title: "Кой отвлече Искрен?",
-  victim: "Искрен Тодоров",
-  location: "София",
-  solution: {
-    killer: "Станислав",
-    motive: "",
-  },
-  confessionText: "Не можех да позволя на Киара да спечели. Искрен трябваше да изчезне за малко.",
-};
-
-const allCases = [...cases, customCase as any];
-
 export default function GuessPage() {
-  const [selectedCaseId, setSelectedCaseId] = useState<string>(allCases[0].id);
+  const [selectedCaseId, setSelectedCaseId] = useState<string>(cases[0].id);
   const [killer, setKiller] = useState("");
   const [result, setResult] = useState<ResultState>("idle");
   const [shuffledSuspects, setShuffledSuspects] = useState<string[]>([]);
 
-  const currentCase = allCases.find((c) => c.id === selectedCaseId)!;
+  const currentCase = cases.find((c) => c.id === selectedCaseId)!;
 
   // Extra decoy suspects for each case (not the killer)
   const decoySuspects: Record<string, string[]> = {
@@ -130,7 +115,7 @@ export default function GuessPage() {
             Избери Досие
           </label>
           <div style={{ display: "grid", gap: "0.75rem" }}>
-            {allCases.map((c) => (
+            {cases.map((c) => (
               <button
                 key={c.id}
                 onClick={() => setSelectedCaseId(c.id)}

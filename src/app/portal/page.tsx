@@ -143,10 +143,6 @@ export default function PortalPage() {
               Влез в Архива
             </button>
           </form>
-
-          <p style={{ color: "#8892A4", fontSize: "0.78rem", marginTop: "1.5rem" }}>
-            💡 Demo код: <span style={{ color: "#C026D3", fontFamily: "'Courier Prime', monospace" }}>KRIM2024</span> (Убийството в Мансардата)
-          </p>
         </div>
 
         <style>{`

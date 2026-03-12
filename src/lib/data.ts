@@ -180,6 +180,33 @@ export const cases: Case[] = [
     confessionText:
       "Тя щеше да получи всичко от баща ни. А аз — нищо. Планирах го месеци наред. Писмото беше перфектно. Само подписът ме издаде...",
   },
+  {
+    id: "4",
+    slug: "koi-otvleche-iskren",
+    title: "Кой отвлече Искрен?",
+    tagline: "Следите водят до никъде. Искрен е в неизвестност.",
+    crimeType: "Отвличане",
+    victim: "Искрен Тодоров",
+    location: "София",
+    suspects: 4,
+    players: "2–6",
+    duration: "1–2 часа",
+    difficulty: 3,
+    pricePhysical: 49,
+    priceDigital: 19,
+    coverImage: "/images/iskren-missing.png",
+    description: "Искрен е изчезнал мистериозно. Всички следи водят до неговите най-близки приятели. Можете ли да разберете кой стои зад това преди да е станало твърде късно?",
+    isFeatured: true,
+    theme: "Отвличане",
+    portalCode: "ISKREN2024",
+    hints: [],
+    solution: {
+      killer: "Станислав",
+      motive: "Състезание",
+      weapon: "Няма"
+    },
+    confessionText: "Не можех да позволя на Киара да спечели. Искрен трябваше да изчезне за малко."
+  }
 ];
 
 export const testimonials: Testimonial[] = [

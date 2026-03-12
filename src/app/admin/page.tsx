@@ -125,9 +125,6 @@ export default function AdminPage() {
               🔓 Влез
             </button>
           </form>
-          <p style={{ color: "#8892A4", fontSize: "0.75rem", marginTop: "1rem" }}>
-            Demo парола: <span style={{ color: "#DC143C", fontFamily: "'Courier Prime', monospace" }}>dosie2024</span>
-          </p>
         </div>
       </div>
     );
