@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-export const runtime = 'edge';
 import { themes } from "@/lib/data";
 import { ChevronRight, ChevronLeft, CheckCircle, Plus, Trash2 } from "lucide-react";
 
