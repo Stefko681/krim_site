@@ -25,12 +25,12 @@ export default function Footer() {
         <div>
           <div
             style={{
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               fontSize: "2rem",
-              color: "#C026D3",
+              color: "#DC143C",
               letterSpacing: "0.12em",
               marginBottom: "1rem",
-              textShadow: "0 0 15px rgba(192,38,211,0.4)",
+              textShadow: "0 0 15px rgba(220,20,60,0.35)",
             }}
           >
             ДОСИЕ
@@ -65,7 +65,7 @@ export default function Footer() {
         <div>
           <h4
             style={{
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               color: "#C8A96E",
               fontSize: "0.85rem",
               letterSpacing: "0.12em",
@@ -104,7 +104,7 @@ export default function Footer() {
         <div>
           <h4
             style={{
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               color: "#C8A96E",
               fontSize: "0.85rem",
               letterSpacing: "0.12em",
@@ -132,7 +132,7 @@ export default function Footer() {
               backgroundColor: "rgba(31,40,51,0.5)",
             }}
           >
-            <p style={{ color: "#C8A96E", fontSize: "0.8rem", fontFamily: "'Special Elite', cursive" }}>
+            <p style={{ color: "#C8A96E", fontSize: "0.8rem", fontFamily: "'Cinzel Decorative', serif" }}>
               🕐 Отговаряме в рамките на 24 часа
             </p>
           </div>
@@ -155,7 +155,7 @@ export default function Footer() {
           style={{
             color: "#8892A4",
             fontSize: "0.8rem",
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
           }}
         >
           © 2025 ДОСИЕ. Всички права запазени.
@@ -171,7 +171,7 @@ export default function Footer() {
             style={{
               border: "2px solid rgba(220,20,60,0.5)",
               color: "#DC143C",
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               fontSize: "0.65rem",
               letterSpacing: "0.15em",
               padding: "1px 8px",

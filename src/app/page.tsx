@@ -96,7 +96,7 @@ function HeroSection() {
             display: "inline-block",
             border: "1px solid rgba(200,169,110,0.3)",
             color: "#C8A96E",
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             fontSize: "0.8rem",
             letterSpacing: "0.2em",
             padding: "5px 18px",
@@ -109,7 +109,7 @@ function HeroSection() {
 
         <h1
           style={{
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             fontSize: "clamp(2.5rem, 7vw, 5rem)",
             lineHeight: 1.15,
             color: "#E8E8E8",
@@ -118,16 +118,16 @@ function HeroSection() {
         >
           {typedText}
           {typedText.length < fullText.length && (
-            <span style={{ color: "#C026D3", animation: "blink 1s step-end infinite" }}>|</span>
+            <span style={{ color: "#DC143C", animation: "blink 1s step-end infinite" }}>|</span>
           )}
         </h1>
 
         {phase >= 1 && (
           <h2
             style={{
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               fontSize: "clamp(1.5rem, 4vw, 3rem)",
-              color: "#C026D3",
+              color: "#DC143C",
               marginBottom: "2rem",
               animation: "fadeIn 0.8s ease forwards",
             }}
@@ -163,24 +163,24 @@ function HeroSection() {
           <Link
             href="/shop"
             style={{
-              background: "linear-gradient(135deg, #C026D3, #9b1cb5)",
+              background: "linear-gradient(135deg, #DC143C, #8B0000)",
               color: "white",
               textDecoration: "none",
               padding: "14px 32px",
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               fontSize: "1rem",
               letterSpacing: "0.08em",
               transition: "all 0.3s",
-              boxShadow: "0 4px 20px rgba(192,38,211,0.4)",
+              boxShadow: "0 4px 20px rgba(220,20,60,0.35)",
               borderRadius: "3px",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "translateY(-3px)";
-              e.currentTarget.style.boxShadow = "0 10px 30px rgba(192,38,211,0.5)";
+              e.currentTarget.style.boxShadow = "0 10px 30px rgba(220,20,60,0.4)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "0 4px 20px rgba(192,38,211,0.4)";
+              e.currentTarget.style.boxShadow = "0 4px 20px rgba(220,20,60,0.35)";
             }}
           >
             📂 Разгледай Досиетата
@@ -193,7 +193,7 @@ function HeroSection() {
               textDecoration: "none",
               padding: "14px 32px",
               border: "2px solid #C8A96E",
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               fontSize: "1rem",
               letterSpacing: "0.08em",
               transition: "all 0.3s",
@@ -228,7 +228,7 @@ function HeroSection() {
             color: "#C8A96E",
             opacity: 0.5,
             fontSize: "0.75rem",
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             letterSpacing: "0.1em",
           }}
         >
@@ -306,7 +306,7 @@ function LeadMagnet() {
             right: "20px",
             border: "2px solid rgba(220,20,60,0.6)",
             color: "#DC143C",
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             fontSize: "0.65rem",
             letterSpacing: "0.12em",
             padding: "2px 8px",
@@ -320,7 +320,7 @@ function LeadMagnet() {
           <div style={{ fontSize: "3rem", marginBottom: "1rem" }}>🕵️</div>
           <h2
             style={{
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               fontSize: "clamp(1.4rem, 3vw, 2rem)",
               color: "#C8A96E",
               marginBottom: "1rem",
@@ -348,7 +348,7 @@ function LeadMagnet() {
                 lineHeight: 1.7,
               }}
             >
-              <span style={{ color: "#C026D3", marginRight: "8px" }}>ЗАГАДКА:</span>
+              <span style={{ color: "#DC143C", marginRight: "8px" }}>ЗАГАДКА:</span>
               {riddle.question}
             </p>
           </div>
@@ -388,12 +388,12 @@ function LeadMagnet() {
                 <button
                   type="submit"
                   style={{
-                    background: "linear-gradient(135deg, #C026D3, #9b1cb5)",
+                    background: "linear-gradient(135deg, #DC143C, #8B0000)",
                     color: "white",
                     border: "none",
                     padding: "12px 28px",
                     borderRadius: "4px",
-                    fontFamily: "'Special Elite', cursive",
+                    fontFamily: "'Cinzel Decorative', serif",
                     fontSize: "0.95rem",
                     cursor: "pointer",
                     letterSpacing: "0.05em",
@@ -426,7 +426,7 @@ function LeadMagnet() {
                   <p
                     style={{
                       color: "#4ade80",
-                      fontFamily: "'Special Elite', cursive",
+                      fontFamily: "'Cinzel Decorative', serif",
                       fontSize: "1rem",
                       marginBottom: "0.75rem",
                     }}
@@ -444,13 +444,13 @@ function LeadMagnet() {
                   </p>
                   <p style={{ color: "#C8A96E", marginTop: "1rem", fontSize: "0.9rem" }}>
                     🕵️ Отличен инстинкт! Разгледай пълните ни досиета →{" "}
-                    <Link href="/shop" style={{ color: "#C026D3" }}>
+                    <Link href="/shop" style={{ color: "#DC143C" }}>
                       Магазин
                     </Link>
                   </p>
                 </div>
               ) : (
-                <p style={{ color: "#C8A96E", fontFamily: "'Special Elite', cursive" }}>
+                <p style={{ color: "#C8A96E", fontFamily: "'Cinzel Decorative', serif" }}>
                   Зареждане на секретния файл...
                 </p>
               )}
@@ -490,7 +490,7 @@ function FeaturedCases() {
           style={{
             display: "inline-block",
             color: "#8892A4",
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             fontSize: "0.75rem",
             letterSpacing: "0.2em",
             textTransform: "uppercase",
@@ -501,7 +501,7 @@ function FeaturedCases() {
         </div>
         <h2
           style={{
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             fontSize: "clamp(1.8rem, 4vw, 3rem)",
             color: "#E8E8E8",
           }}
@@ -581,7 +581,7 @@ function FeaturedCases() {
           style={{
             color: "#C8A96E",
             textDecoration: "none",
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             fontSize: "0.95rem",
             letterSpacing: "0.08em",
             border: "1px solid rgba(200,169,110,0.3)",
@@ -628,7 +628,7 @@ function CaseCard({ c }: { c: (typeof cases)[0] }) {
         transition: "transform 0.3s, box-shadow 0.3s",
         transform: hovered ? "translateY(-6px)" : "translateY(0)",
         boxShadow: hovered
-          ? "0 20px 40px rgba(0,0,0,0.5), 0 0 20px rgba(192,38,211,0.15)"
+          ? "0 20px 40px rgba(0,0,0,0.5), 0 0 20px rgba(220,20,60,0.1)"
           : "0 4px 12px rgba(0,0,0,0.3)",
         cursor: "pointer",
         position: "relative",
@@ -660,7 +660,7 @@ function CaseCard({ c }: { c: (typeof cases)[0] }) {
             style={{
               border: "4px solid #DC143C",
               color: "#DC143C",
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               fontSize: "1.8rem",
               letterSpacing: "0.08em",
               padding: "8px 20px",
@@ -686,7 +686,7 @@ function CaseCard({ c }: { c: (typeof cases)[0] }) {
             style={{
               color: "#8892A4",
               fontSize: "0.75rem",
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               letterSpacing: "0.1em",
               textTransform: "uppercase",
             }}
@@ -710,7 +710,7 @@ function CaseCard({ c }: { c: (typeof cases)[0] }) {
 
         <h3
           style={{
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             fontSize: "1.1rem",
             color: "#E8E8E8",
             marginBottom: "0.4rem",
@@ -768,8 +768,8 @@ function CaseCard({ c }: { c: (typeof cases)[0] }) {
           <div>
             <span
               style={{
-                color: "#C026D3",
-                fontFamily: "'Special Elite', cursive",
+                color: "#DC143C",
+                fontFamily: "'Cinzel Decorative', serif",
                 fontSize: "1.2rem",
               }}
             >
@@ -779,11 +779,11 @@ function CaseCard({ c }: { c: (typeof cases)[0] }) {
           <Link
             href={`/shop/${c.slug}`}
             style={{
-              background: "linear-gradient(135deg, #C026D3, #9b1cb5)",
+              background: "linear-gradient(135deg, #DC143C, #8B0000)",
               color: "white",
               textDecoration: "none",
               padding: "7px 16px",
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               fontSize: "0.85rem",
               borderRadius: "3px",
               transition: "all 0.3s",
@@ -812,7 +812,7 @@ function Testimonials() {
           style={{
             display: "inline-block",
             color: "#8892A4",
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             fontSize: "0.75rem",
             letterSpacing: "0.2em",
             textTransform: "uppercase",
@@ -823,7 +823,7 @@ function Testimonials() {
         </div>
         <h2
           style={{
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
             color: "#E8E8E8",
           }}
@@ -877,7 +877,7 @@ function Testimonials() {
                   right: "15px",
                   border: "2px solid rgba(220,20,60,0.5)",
                   color: "#DC143C",
-                  fontFamily: "'Special Elite', cursive",
+                  fontFamily: "'Cinzel Decorative', serif",
                   fontSize: "0.55rem",
                   letterSpacing: "0.12em",
                   padding: "1px 6px",
@@ -927,7 +927,7 @@ function Testimonials() {
                   <p
                     style={{
                       color: "#E8E8E8",
-                      fontFamily: "'Special Elite', cursive",
+                      fontFamily: "'Cinzel Decorative', serif",
                       fontSize: "0.9rem",
                     }}
                   >
@@ -976,7 +976,7 @@ function HowItWorks() {
       <div style={{ textAlign: "center", marginBottom: "3rem" }}>
         <h2
           style={{
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
             color: "#E8E8E8",
             marginBottom: "0.5rem",
@@ -1007,7 +1007,7 @@ function HowItWorks() {
             style={{
               textAlign: "center",
               padding: "2rem 1.5rem",
-              borderTop: `2px solid ${i % 2 === 0 ? "#C026D3" : "#C8A96E"}`,
+              borderTop: `2px solid ${i % 2 === 0 ? "#DC143C" : "#C8A96E"}`,
               background: "rgba(31,40,51,0.3)",
               borderRadius: "0 0 6px 6px",
               transition: "transform 0.3s, box-shadow 0.3s",
@@ -1023,7 +1023,7 @@ function HowItWorks() {
           >
             <div
               style={{
-                fontFamily: "'Special Elite', cursive",
+                fontFamily: "'Cinzel Decorative', serif",
                 color: "rgba(200,169,110,0.2)",
                 fontSize: "3.5rem",
                 lineHeight: 1,
@@ -1035,7 +1035,7 @@ function HowItWorks() {
             <div style={{ fontSize: "2rem", marginBottom: "0.75rem" }}>{step.icon}</div>
             <h3
               style={{
-                fontFamily: "'Special Elite', cursive",
+                fontFamily: "'Cinzel Decorative', serif",
                 color: "#E8E8E8",
                 fontSize: "1.1rem",
                 marginBottom: "0.75rem",
@@ -1065,8 +1065,8 @@ function CTABanner() {
     >
       <div
         style={{
-          background: "linear-gradient(135deg, rgba(192,38,211,0.15) 0%, rgba(139,0,0,0.15) 100%)",
-          border: "1px solid rgba(192,38,211,0.3)",
+          background: "linear-gradient(135deg, rgba(220,20,60,0.1) 0%, rgba(139,0,0,0.15) 100%)",
+          border: "1px solid rgba(220,20,60,0.25)",
           borderRadius: "8px",
           padding: "4rem 2rem",
           textAlign: "center",
@@ -1081,7 +1081,7 @@ function CTABanner() {
             left: "50%",
             border: "2px solid rgba(220,20,60,0.4)",
             color: "#DC143C",
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             fontSize: "0.65rem",
             letterSpacing: "0.15em",
             padding: "2px 12px",
@@ -1092,7 +1092,7 @@ function CTABanner() {
         </div>
         <h2
           style={{
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
             color: "#E8E8E8",
             marginBottom: "1rem",
@@ -1107,25 +1107,25 @@ function CTABanner() {
         <Link
           href="/configurator"
           style={{
-            background: "linear-gradient(135deg, #C026D3, #9b1cb5)",
+            background: "linear-gradient(135deg, #DC143C, #8B0000)",
             color: "white",
             textDecoration: "none",
             padding: "14px 36px",
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             fontSize: "1.1rem",
             letterSpacing: "0.08em",
             borderRadius: "4px",
             display: "inline-block",
             transition: "all 0.3s",
-            boxShadow: "0 4px 20px rgba(192,38,211,0.4)",
+            boxShadow: "0 4px 20px rgba(220,20,60,0.35)",
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = "translateY(-3px)";
-            e.currentTarget.style.boxShadow = "0 10px 30px rgba(192,38,211,0.5)";
+            e.currentTarget.style.boxShadow = "0 10px 30px rgba(220,20,60,0.4)";
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.transform = "translateY(0)";
-            e.currentTarget.style.boxShadow = "0 4px 20px rgba(192,38,211,0.4)";
+            e.currentTarget.style.boxShadow = "0 4px 20px rgba(220,20,60,0.35)";
           }}
         >
           ✏️ Конфигурирай Своя Случай
@@ -1206,7 +1206,7 @@ function GuessTeaser() {
             style={{
               border: "2px solid rgba(220,20,60,0.5)",
               color: "#DC143C",
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               fontSize: "0.65rem",
               letterSpacing: "0.12em",
               padding: "3px 10px",
@@ -1222,7 +1222,7 @@ function GuessTeaser() {
         <div style={{ flex: 1, minWidth: "280px" }}>
           <p
             style={{
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               color: "#DC143C",
               fontSize: "0.75rem",
               letterSpacing: "0.2em",
@@ -1234,7 +1234,7 @@ function GuessTeaser() {
           </p>
           <h2
             style={{
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               fontSize: "clamp(1.6rem, 3.5vw, 2.4rem)",
               color: "#E8E8E8",
               marginBottom: "0.75rem",
@@ -1265,7 +1265,7 @@ function GuessTeaser() {
                 textDecoration: "none",
                 padding: "13px 30px",
                 borderRadius: "4px",
-                fontFamily: "'Special Elite', cursive",
+                fontFamily: "'Cinzel Decorative', serif",
                 fontSize: "1rem",
                 letterSpacing: "0.06em",
                 display: "inline-flex",
@@ -1285,7 +1285,7 @@ function GuessTeaser() {
             >
               ⚖️ Влез в Разследването
             </Link>
-            <span style={{ color: "#8892A4", fontSize: "0.82rem", fontFamily: "'Special Elite', cursive" }}>
+            <span style={{ color: "#8892A4", fontSize: "0.82rem", fontFamily: "'Cinzel Decorative', serif" }}>
               3 случая · без регистрация
             </span>
           </div>
@@ -1299,7 +1299,7 @@ function GuessTeaser() {
             right: "24px",
             border: "3px solid rgba(21,128,61,0.3)",
             color: "rgba(21,128,61,0.4)",
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             fontSize: "0.65rem",
             letterSpacing: "0.1em",
             padding: "4px 10px",

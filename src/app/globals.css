@@ -4,7 +4,7 @@
   --bg-primary: #0B0C10;
   --bg-surface: #1F2833;
   --bg-surface-light: #2a3645;
-  --accent-primary: #C026D3;
+  --accent-primary: #DC143C;
   --accent-red: #8B0000;
   --accent-red-bright: #DC143C;
   --accent-gold: #C8A96E;
@@ -51,7 +51,7 @@ body {
 
 /* Typography */
 .font-typewriter {
-  font-family: 'Special Elite', cursive;
+  font-family: 'Cinzel Decorative', serif;
 }
 
 .font-mono-detective {
@@ -127,7 +127,7 @@ body::before {
 .classified-stamp {
   border: 3px solid var(--stamp-red);
   color: var(--stamp-red);
-  font-family: 'Special Elite', cursive;
+  font-family: 'Cinzel Decorative', serif;
   font-size: 0.7rem;
   letter-spacing: 0.15em;
   padding: 1px 8px;
@@ -142,8 +142,8 @@ body::before {
   box-shadow: 0 0 20px rgba(220, 20, 60, 0.3);
 }
 
-.glow-purple {
-  box-shadow: 0 0 20px rgba(192, 38, 211, 0.4);
+.glow-red-alt {
+  box-shadow: 0 0 20px rgba(220, 20, 60, 0.4);
 }
 
 /* Red string decoration */
@@ -197,7 +197,7 @@ body::before {
 .top-secret-stamp {
   border: 4px solid var(--stamp-red);
   color: var(--stamp-red);
-  font-family: 'Special Elite', cursive;
+  font-family: 'Cinzel Decorative', serif;
   font-size: 1.8rem;
   letter-spacing: 0.1em;
   padding: 8px 20px;
@@ -215,18 +215,18 @@ body::before {
 
 /* Button styles */
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent-primary) 0%, #9b1cb5 100%);
+  background: linear-gradient(135deg, var(--accent-primary) 0%, #8B0000 100%);
   color: white;
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-family: 'Special Elite', cursive;
+  font-family: 'Cinzel Decorative', serif;
   letter-spacing: 0.05em;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(192, 38, 211, 0.4);
+  box-shadow: 0 8px 25px rgba(220, 20, 60, 0.4);
 }
 
 .btn-secondary {
@@ -235,7 +235,7 @@ body::before {
   border: 2px solid var(--accent-gold);
   cursor: pointer;
   transition: all 0.3s ease;
-  font-family: 'Special Elite', cursive;
+  font-family: 'Cinzel Decorative', serif;
   letter-spacing: 0.05em;
 }
 

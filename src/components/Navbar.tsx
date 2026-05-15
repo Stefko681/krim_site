@@ -50,11 +50,11 @@ export default function Navbar() {
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
             <span
               style={{
-                fontFamily: "'Special Elite', cursive",
+                fontFamily: "'Cinzel Decorative', serif",
                 fontSize: "1.8rem",
-                color: "#C026D3",
+                color: "#DC143C",
                 letterSpacing: "0.12em",
-                textShadow: "0 0 15px rgba(192,38,211,0.5)",
+                textShadow: "0 0 15px rgba(220,20,60,0.4)",
               }}
             >
               ДОСИЕ
@@ -88,14 +88,14 @@ export default function Navbar() {
               style={{
                 color: "#C8A96E",
                 textDecoration: "none",
-                fontFamily: "'Special Elite', cursive",
+                fontFamily: "'Cinzel Decorative', serif",
                 fontSize: "0.95rem",
                 letterSpacing: "0.06em",
                 transition: "color 0.2s, text-shadow 0.2s",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.color = "#C026D3";
-                e.currentTarget.style.textShadow = "0 0 10px rgba(192,38,211,0.5)";
+                e.currentTarget.style.color = "#DC143C";
+                e.currentTarget.style.textShadow = "0 0 10px rgba(220,20,60,0.4)";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.color = "#C8A96E";
@@ -118,7 +118,7 @@ export default function Navbar() {
               alignItems: "center",
               gap: "5px",
               transition: "color 0.2s",
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
             }}
             onMouseEnter={(e) => { e.currentTarget.style.color = "#C8A96E"; }}
             onMouseLeave={(e) => { e.currentTarget.style.color = "#8892A4"; }}
@@ -130,27 +130,27 @@ export default function Navbar() {
           <Link
             href="/shop"
             style={{
-              background: "linear-gradient(135deg, #C026D3, #9b1cb5)",
+              background: "linear-gradient(135deg, #DC143C, #8B0000)",
               color: "white",
               textDecoration: "none",
               padding: "8px 20px",
               borderRadius: "4px",
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               fontSize: "0.9rem",
               letterSpacing: "0.05em",
               display: "flex",
               alignItems: "center",
               gap: "6px",
               transition: "all 0.3s ease",
-              boxShadow: "0 4px 15px rgba(192,38,211,0.3)",
+              boxShadow: "0 4px 15px rgba(220,20,60,0.25)",
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "translateY(-2px)";
-              e.currentTarget.style.boxShadow = "0 8px 25px rgba(192,38,211,0.5)";
+              e.currentTarget.style.boxShadow = "0 8px 25px rgba(220,20,60,0.4)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "0 4px 15px rgba(192,38,211,0.3)";
+              e.currentTarget.style.boxShadow = "0 4px 15px rgba(220,20,60,0.25)";
             }}
           >
             <ShoppingCart size={16} />
@@ -194,7 +194,7 @@ export default function Navbar() {
               style={{
                 color: "#C8A96E",
                 textDecoration: "none",
-                fontFamily: "'Special Elite', cursive",
+                fontFamily: "'Cinzel Decorative', serif",
                 fontSize: "1.1rem",
                 letterSpacing: "0.06em",
               }}

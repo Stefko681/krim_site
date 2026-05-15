@@ -68,7 +68,7 @@ export default function AdminPage() {
           </div>
           <h1
             style={{
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               fontSize: "2rem",
               color: "#E8E8E8",
               marginBottom: "0.5rem",
@@ -103,7 +103,7 @@ export default function AdminPage() {
               }}
             />
             {pwError && (
-              <p style={{ color: "#DC143C", fontSize: "0.85rem", marginBottom: "0.75rem", fontFamily: "'Special Elite', cursive" }}>
+              <p style={{ color: "#DC143C", fontSize: "0.85rem", marginBottom: "0.75rem", fontFamily: "'Cinzel Decorative', serif" }}>
                 ✗ Грешна парола
               </p>
             )}
@@ -116,7 +116,7 @@ export default function AdminPage() {
                 border: "none",
                 padding: "13px",
                 borderRadius: "4px",
-                fontFamily: "'Special Elite', cursive",
+                fontFamily: "'Cinzel Decorative', serif",
                 fontSize: "1rem",
                 cursor: "pointer",
                 transition: "all 0.3s",
@@ -149,10 +149,10 @@ export default function AdminPage() {
       >
         <div style={{ maxWidth: "1200px", margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <div>
-            <p style={{ color: "#DC143C", fontFamily: "'Special Elite', cursive", fontSize: "0.75rem", letterSpacing: "0.15em", marginBottom: "0.3rem" }}>
+            <p style={{ color: "#DC143C", fontFamily: "'Cinzel Decorative', serif", fontSize: "0.75rem", letterSpacing: "0.15em", marginBottom: "0.3rem" }}>
               🔴 АДМИНИСТРАТИВЕН ПАНЕЛ — СТРОГО ПОВЕРИТЕЛНО
             </p>
-            <h1 style={{ fontFamily: "'Special Elite', cursive", fontSize: "1.8rem", color: "#E8E8E8" }}>
+            <h1 style={{ fontFamily: "'Cinzel Decorative', serif", fontSize: "1.8rem", color: "#E8E8E8" }}>
               Архивен Команден Център
             </h1>
           </div>
@@ -164,7 +164,7 @@ export default function AdminPage() {
               color: "#DC143C",
               padding: "8px 16px",
               cursor: "pointer",
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               fontSize: "0.8rem",
               borderRadius: "4px",
               transition: "all 0.2s",
@@ -186,7 +186,7 @@ export default function AdminPage() {
           }}
         >
           {[
-            { label: "Активни Досиета", value: cases.length.toString(), icon: "📂", color: "#C026D3" },
+            { label: "Активни Досиета", value: cases.length.toString(), icon: "📂", color: "#DC143C" },
             { label: "Поръчки Тази Седмица", value: "12", icon: "📦", color: "#DC143C" },
             { label: "Custom Заявки", value: requests.length.toString(), icon: "✏️", color: "#C8A96E" },
             { label: "Активни Детективи", value: "38", icon: "🕵️", color: "#4ade80" },
@@ -202,7 +202,7 @@ export default function AdminPage() {
               }}
             >
               <div style={{ fontSize: "1.5rem", marginBottom: "0.5rem" }}>{stat.icon}</div>
-              <div style={{ color: stat.color, fontFamily: "'Special Elite', cursive", fontSize: "1.8rem" }}>
+              <div style={{ color: stat.color, fontFamily: "'Cinzel Decorative', serif", fontSize: "1.8rem" }}>
                 {stat.value}
               </div>
               <div style={{ color: "#8892A4", fontSize: "0.8rem" }}>{stat.label}</div>
@@ -220,10 +220,10 @@ export default function AdminPage() {
                 padding: "10px 20px",
                 background: "transparent",
                 border: "none",
-                borderBottom: tab === t.key ? "2px solid #C026D3" : "2px solid transparent",
-                color: tab === t.key ? "#C026D3" : "#8892A4",
+                borderBottom: tab === t.key ? "2px solid #DC143C" : "2px solid transparent",
+                color: tab === t.key ? "#DC143C" : "#8892A4",
                 cursor: "pointer",
-                fontFamily: "'Special Elite', cursive",
+                fontFamily: "'Cinzel Decorative', serif",
                 fontSize: "0.9rem",
                 display: "flex",
                 alignItems: "center",
@@ -252,18 +252,18 @@ function CasesTab() {
   return (
     <div>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1.5rem" }}>
-        <h2 style={{ fontFamily: "'Special Elite', cursive", color: "#E8E8E8", fontSize: "1.3rem" }}>
+        <h2 style={{ fontFamily: "'Cinzel Decorative', serif", color: "#E8E8E8", fontSize: "1.3rem" }}>
           Управление на Досиета
         </h2>
         <button
           style={{
-            background: "linear-gradient(135deg, #C026D3, #9b1cb5)",
+            background: "linear-gradient(135deg, #DC143C, #8B0000)",
             color: "white",
             border: "none",
             padding: "9px 18px",
             borderRadius: "4px",
             cursor: "pointer",
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             fontSize: "0.85rem",
             display: "flex",
             alignItems: "center",
@@ -291,11 +291,11 @@ function CasesTab() {
             }}
           >
             <div>
-              <p style={{ color: "#E8E8E8", fontFamily: "'Special Elite', cursive", fontSize: "1rem", marginBottom: "2px" }}>
+              <p style={{ color: "#E8E8E8", fontFamily: "'Cinzel Decorative', serif", fontSize: "1rem", marginBottom: "2px" }}>
                 {c.title}
               </p>
               <p style={{ color: "#8892A4", fontSize: "0.8rem" }}>
-                Код: <span style={{ color: "#C026D3", fontFamily: "'Courier Prime', monospace" }}>{c.portalCode}</span>
+                Код: <span style={{ color: "#DC143C", fontFamily: "'Courier Prime', monospace" }}>{c.portalCode}</span>
                 {" · "}Трудност: {c.difficulty}/5
                 {" · "}Дигитално: {c.priceDigital} лв
                 {" · "}Физическо: {c.pricePhysical} лв
@@ -304,13 +304,13 @@ function CasesTab() {
             <div style={{ display: "flex", gap: "0.5rem" }}>
               <button
                 style={{
-                  background: "rgba(192,38,211,0.1)",
-                  border: "1px solid rgba(192,38,211,0.3)",
-                  color: "#C026D3",
+                  background: "rgba(220,20,60,0.08)",
+                  border: "1px solid rgba(220,20,60,0.25)",
+                  color: "#DC143C",
                   padding: "7px 14px",
                   borderRadius: "4px",
                   cursor: "pointer",
-                  fontFamily: "'Special Elite', cursive",
+                  fontFamily: "'Cinzel Decorative', serif",
                   fontSize: "0.8rem",
                   display: "flex",
                   alignItems: "center",
@@ -327,7 +327,7 @@ function CasesTab() {
                   padding: "7px 14px",
                   borderRadius: "4px",
                   cursor: "pointer",
-                  fontFamily: "'Special Elite', cursive",
+                  fontFamily: "'Cinzel Decorative', serif",
                   fontSize: "0.8rem",
                   display: "flex",
                   alignItems: "center",
@@ -361,7 +361,7 @@ function OrdersTab() {
 
   return (
     <div>
-      <h2 style={{ fontFamily: "'Special Elite', cursive", color: "#E8E8E8", fontSize: "1.3rem", marginBottom: "1.5rem" }}>
+      <h2 style={{ fontFamily: "'Cinzel Decorative', serif", color: "#E8E8E8", fontSize: "1.3rem", marginBottom: "1.5rem" }}>
         Поръчки
       </h2>
       <div style={{ overflowX: "auto" }}>
@@ -374,7 +374,7 @@ function OrdersTab() {
                   style={{
                     textAlign: "left",
                     color: "#C8A96E",
-                    fontFamily: "'Special Elite', cursive",
+                    fontFamily: "'Cinzel Decorative', serif",
                     fontSize: "0.8rem",
                     letterSpacing: "0.1em",
                     padding: "10px 12px",
@@ -394,12 +394,12 @@ function OrdersTab() {
                 onMouseEnter={(e) => { e.currentTarget.style.background = "rgba(31,40,51,0.4)"; }}
                 onMouseLeave={(e) => { e.currentTarget.style.background = "transparent"; }}
               >
-                <td style={{ padding: "12px", color: "#C026D3", fontFamily: "'Courier Prime', monospace", fontSize: "0.85rem" }}>{o.id}</td>
+                <td style={{ padding: "12px", color: "#DC143C", fontFamily: "'Courier Prime', monospace", fontSize: "0.85rem" }}>{o.id}</td>
                 <td style={{ padding: "12px", color: "#E8E8E8", fontSize: "0.9rem" }}>{o.case}</td>
                 <td style={{ padding: "12px", color: "#8892A4", fontSize: "0.85rem" }}>{o.format}</td>
-                <td style={{ padding: "12px", color: "#C8A96E", fontFamily: "'Special Elite', cursive" }}>{o.total} лв</td>
+                <td style={{ padding: "12px", color: "#C8A96E", fontFamily: "'Cinzel Decorative', serif" }}>{o.total} лв</td>
                 <td style={{ padding: "12px" }}>
-                  <span style={{ color: statusColor(o.status), fontSize: "0.85rem", fontFamily: "'Special Elite', cursive" }}>
+                  <span style={{ color: statusColor(o.status), fontSize: "0.85rem", fontFamily: "'Cinzel Decorative', serif" }}>
                     ● {o.status}
                   </span>
                 </td>
@@ -416,7 +416,7 @@ function OrdersTab() {
 function PortalTab() {
   return (
     <div>
-      <h2 style={{ fontFamily: "'Special Elite', cursive", color: "#E8E8E8", fontSize: "1.3rem", marginBottom: "0.5rem" }}>
+      <h2 style={{ fontFamily: "'Cinzel Decorative', serif", color: "#E8E8E8", fontSize: "1.3rem", marginBottom: "0.5rem" }}>
         Редактор на Портала
       </h2>
       <p style={{ color: "#8892A4", fontSize: "0.9rem", marginBottom: "2rem" }}>
@@ -434,10 +434,10 @@ function PortalTab() {
             }}
           >
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "1rem" }}>
-              <h3 style={{ fontFamily: "'Special Elite', cursive", color: "#E8E8E8", fontSize: "1rem" }}>
+              <h3 style={{ fontFamily: "'Cinzel Decorative', serif", color: "#E8E8E8", fontSize: "1rem" }}>
                 {c.title}
               </h3>
-              <span style={{ color: "#C026D3", fontFamily: "'Courier Prime', monospace", fontSize: "0.85rem" }}>
+              <span style={{ color: "#DC143C", fontFamily: "'Courier Prime', monospace", fontSize: "0.85rem" }}>
                 Код: {c.portalCode}
               </span>
             </div>
@@ -456,7 +456,7 @@ function PortalTab() {
                     padding: "6px 12px",
                   }}
                 >
-                  <span style={{ color: "#8892A4", fontSize: "0.75rem", fontFamily: "'Special Elite', cursive" }}>
+                  <span style={{ color: "#8892A4", fontSize: "0.75rem", fontFamily: "'Cinzel Decorative', serif" }}>
                     {s.label}:{" "}
                   </span>
                   <span style={{ color: "#DC143C", fontFamily: "'Courier Prime', monospace", fontSize: "0.85rem" }}>
@@ -471,13 +471,13 @@ function PortalTab() {
             <button
               style={{
                 marginTop: "0.75rem",
-                background: "rgba(192,38,211,0.1)",
-                border: "1px solid rgba(192,38,211,0.3)",
-                color: "#C026D3",
+                background: "rgba(220,20,60,0.08)",
+                border: "1px solid rgba(220,20,60,0.25)",
+                color: "#DC143C",
                 padding: "7px 14px",
                 borderRadius: "4px",
                 cursor: "pointer",
-                fontFamily: "'Special Elite', cursive",
+                fontFamily: "'Cinzel Decorative', serif",
                 fontSize: "0.8rem",
                 display: "flex",
                 alignItems: "center",
@@ -497,7 +497,7 @@ function RequestsTab({ requests }: { requests: Record<string, unknown>[] }) {
   if (requests.length === 0) {
     return (
       <div style={{ textAlign: "center", padding: "3rem", color: "#8892A4" }}>
-        <p style={{ fontFamily: "'Special Elite', cursive", fontSize: "1.1rem" }}>
+        <p style={{ fontFamily: "'Cinzel Decorative', serif", fontSize: "1.1rem" }}>
           Няма получени custom заявки.
         </p>
       </div>
@@ -506,7 +506,7 @@ function RequestsTab({ requests }: { requests: Record<string, unknown>[] }) {
 
   return (
     <div>
-      <h2 style={{ fontFamily: "'Special Elite', cursive", color: "#E8E8E8", fontSize: "1.3rem", marginBottom: "1.5rem" }}>
+      <h2 style={{ fontFamily: "'Cinzel Decorative', serif", color: "#E8E8E8", fontSize: "1.3rem", marginBottom: "1.5rem" }}>
         Custom Заявки ({requests.length})
       </h2>
       <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>

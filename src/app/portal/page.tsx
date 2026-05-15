@@ -41,20 +41,20 @@ export default function PortalPage() {
               width: "80px",
               height: "80px",
               borderRadius: "50%",
-              background: "rgba(192,38,211,0.1)",
-              border: "2px solid rgba(192,38,211,0.3)",
+              background: "rgba(220,20,60,0.08)",
+              border: "2px solid rgba(220,20,60,0.25)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
               margin: "0 auto 1.5rem",
             }}
           >
-            <Lock size={32} color="#C026D3" />
+            <Lock size={32} color="#DC143C" />
           </div>
 
           <div
             style={{
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               color: "#8892A4",
               fontSize: "0.75rem",
               letterSpacing: "0.2em",
@@ -66,7 +66,7 @@ export default function PortalPage() {
           </div>
           <h1
             style={{
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               fontSize: "2.2rem",
               color: "#E8E8E8",
               marginBottom: "1rem",
@@ -101,7 +101,7 @@ export default function PortalPage() {
                   transition: "border-color 0.2s",
                   boxShadow: codeError ? "0 0 15px rgba(220,20,60,0.3)" : "none",
                 }}
-                onFocus={(e) => { if (!codeError) e.currentTarget.style.borderColor = "#C026D3"; }}
+                onFocus={(e) => { if (!codeError) e.currentTarget.style.borderColor = "#DC143C"; }}
                 onBlur={(e) => { if (!codeError) e.currentTarget.style.borderColor = "rgba(200,169,110,0.25)"; }}
               />
             </div>
@@ -109,7 +109,7 @@ export default function PortalPage() {
               <p
                 style={{
                   color: "#DC143C",
-                  fontFamily: "'Special Elite', cursive",
+                  fontFamily: "'Cinzel Decorative', serif",
                   fontSize: "0.9rem",
                   marginBottom: "1rem",
                   animation: "shake 0.3s ease",
@@ -122,12 +122,12 @@ export default function PortalPage() {
               type="submit"
               style={{
                 width: "100%",
-                background: "linear-gradient(135deg, #C026D3, #9b1cb5)",
+                background: "linear-gradient(135deg, #DC143C, #8B0000)",
                 color: "white",
                 border: "none",
                 padding: "14px",
                 borderRadius: "4px",
-                fontFamily: "'Special Elite', cursive",
+                fontFamily: "'Cinzel Decorative', serif",
                 fontSize: "1.05rem",
                 cursor: "pointer",
                 letterSpacing: "0.06em",
@@ -136,7 +136,7 @@ export default function PortalPage() {
                 justifyContent: "center",
                 gap: "8px",
                 transition: "all 0.3s",
-                boxShadow: "0 4px 20px rgba(192,38,211,0.35)",
+                boxShadow: "0 4px 20px rgba(220,20,60,0.3)",
               }}
             >
               <Eye size={18} />
@@ -169,12 +169,12 @@ export default function PortalPage() {
         <div style={{ maxWidth: "900px", margin: "0 auto" }}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: "1rem" }}>
             <div>
-              <p style={{ color: "#8892A4", fontFamily: "'Special Elite', cursive", fontSize: "0.75rem", letterSpacing: "0.15em", marginBottom: "0.4rem" }}>
+              <p style={{ color: "#8892A4", fontFamily: "'Cinzel Decorative', serif", fontSize: "0.75rem", letterSpacing: "0.15em", marginBottom: "0.4rem" }}>
                 🔓 ДОСТЪП РАЗРЕШЕН — ДОСИЕ #{currentCase.id.padStart(4, "0")}
               </p>
               <h1
                 style={{
-                  fontFamily: "'Special Elite', cursive",
+                  fontFamily: "'Cinzel Decorative', serif",
                   fontSize: "clamp(1.5rem, 4vw, 2.5rem)",
                   color: "#E8E8E8",
                 }}
@@ -190,7 +190,7 @@ export default function PortalPage() {
                 color: "#8892A4",
                 padding: "8px 14px",
                 cursor: "pointer",
-                fontFamily: "'Special Elite', cursive",
+                fontFamily: "'Cinzel Decorative', serif",
                 fontSize: "0.8rem",
                 borderRadius: "4px",
                 transition: "all 0.2s",
@@ -210,11 +210,11 @@ export default function PortalPage() {
                 onClick={() => setActiveTab(tab)}
                 style={{
                   padding: "9px 22px",
-                  background: activeTab === tab ? "rgba(192,38,211,0.15)" : "transparent",
-                  border: activeTab === tab ? "1px solid #C026D3" : "1px solid rgba(200,169,110,0.2)",
-                  color: activeTab === tab ? "#C026D3" : "#8892A4",
+                  background: activeTab === tab ? "rgba(220,20,60,0.1)" : "transparent",
+                  border: activeTab === tab ? "1px solid #DC143C" : "1px solid rgba(200,169,110,0.2)",
+                  color: activeTab === tab ? "#DC143C" : "#8892A4",
                   cursor: "pointer",
-                  fontFamily: "'Special Elite', cursive",
+                  fontFamily: "'Cinzel Decorative', serif",
                   fontSize: "0.9rem",
                   borderRadius: "4px",
                   transition: "all 0.2s",
@@ -280,7 +280,7 @@ function HintAccordion({
 
   const levels = [
     { label: "💡 Лека Насока", text: hint.level1, color: "#C8A96E" },
-    { label: "🔦 Силен Жокер", text: hint.level2, color: "#C026D3" },
+    { label: "🔦 Силен Жокер", text: hint.level2, color: "#DC143C" },
     { label: "🎯 Директен Отговор", text: hint.level3, color: "#DC143C" },
   ];
 
@@ -314,7 +314,7 @@ function HintAccordion({
             alignItems: "center",
             justifyContent: "center",
             color: "#DC143C",
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             fontSize: "0.85rem",
           }}
         >
@@ -339,7 +339,7 @@ function HintAccordion({
                 width: "8px",
                 height: "8px",
                 borderRadius: "50%",
-                background: level > l ? "#C026D3" : "rgba(200,169,110,0.2)",
+                background: level > l ? "#DC143C" : "rgba(200,169,110,0.2)",
               }}
             />
           ))}
@@ -356,7 +356,7 @@ function HintAccordion({
             animation: "fadeInHint 0.3s ease",
           }}
         >
-          <p style={{ color: lv.color, fontFamily: "'Special Elite', cursive", fontSize: "0.75rem", letterSpacing: "0.1em", marginBottom: "4px" }}>
+          <p style={{ color: lv.color, fontFamily: "'Cinzel Decorative', serif", fontSize: "0.75rem", letterSpacing: "0.1em", marginBottom: "4px" }}>
             {lv.label}
           </p>
           <p style={{ color: "#C8A96E", fontFamily: "'Courier Prime', monospace", fontSize: "0.9rem", lineHeight: 1.6 }}>
@@ -380,13 +380,13 @@ function HintAccordion({
               padding: "8px 18px",
               borderRadius: "4px",
               cursor: "pointer",
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               fontSize: "0.85rem",
               transition: "all 0.2s",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = "#C026D3";
-              e.currentTarget.style.color = "#C026D3";
+              e.currentTarget.style.borderColor = "#DC143C";
+              e.currentTarget.style.color = "#DC143C";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.borderColor = "rgba(200,169,110,0.25)";
@@ -400,7 +400,7 @@ function HintAccordion({
       )}
       {level === 3 && (
         <div style={{ padding: "0.75rem 1.5rem", borderTop: "1px solid rgba(200,169,110,0.08)" }}>
-          <p style={{ color: "#15803d", fontFamily: "'Special Elite', cursive", fontSize: "0.8rem" }}>
+          <p style={{ color: "#15803d", fontFamily: "'Cinzel Decorative', serif", fontSize: "0.8rem" }}>
             ✅ Всички жокери са разкрити
           </p>
         </div>
@@ -444,7 +444,7 @@ function AccuseSection({ case_ }: { case_: (typeof cases)[0] }) {
             display: "inline-block",
             border: "5px solid #DC143C",
             color: "#DC143C",
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             fontSize: "clamp(1.5rem, 5vw, 2.5rem)",
             letterSpacing: "0.08em",
             padding: "16px 40px",
@@ -463,7 +463,7 @@ function AccuseSection({ case_ }: { case_: (typeof cases)[0] }) {
         <p
           style={{
             color: "#C8A96E",
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             fontSize: "1.1rem",
             marginBottom: "1rem",
           }}
@@ -482,7 +482,7 @@ function AccuseSection({ case_ }: { case_: (typeof cases)[0] }) {
             padding: "12px 28px",
             borderRadius: "4px",
             cursor: "pointer",
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             fontSize: "0.95rem",
             transition: "all 0.3s",
           }}
@@ -510,7 +510,7 @@ function AccuseSection({ case_ }: { case_: (typeof cases)[0] }) {
             display: "inline-block",
             border: "5px solid #15803d",
             color: "#4ade80",
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             fontSize: "clamp(1.5rem, 5vw, 2.5rem)",
             letterSpacing: "0.08em",
             padding: "16px 40px",
@@ -527,7 +527,7 @@ function AccuseSection({ case_ }: { case_: (typeof cases)[0] }) {
           <span style={{ fontSize: "0.9em" }}>Е ЗАКРИТ</span>
         </div>
 
-        <p style={{ color: "#4ade80", fontFamily: "'Special Elite', cursive", fontSize: "1.2rem", marginBottom: "0.5rem" }}>
+        <p style={{ color: "#4ade80", fontFamily: "'Cinzel Decorative', serif", fontSize: "1.2rem", marginBottom: "0.5rem" }}>
           🎉 Брилянтно! Ти разкри убиеца!
         </p>
         <p style={{ color: "#8892A4", marginBottom: "2rem" }}>
@@ -557,7 +557,7 @@ function AccuseSection({ case_ }: { case_: (typeof cases)[0] }) {
               pointerEvents: "none",
             }}
           />
-          <p style={{ color: "#C8A96E", fontFamily: "'Special Elite', cursive", fontSize: "0.78rem", letterSpacing: "0.12em", marginBottom: "1rem" }}>
+          <p style={{ color: "#C8A96E", fontFamily: "'Cinzel Decorative', serif", fontSize: "0.78rem", letterSpacing: "0.12em", marginBottom: "1rem" }}>
             🎙 САМОПРИЗНАНИЕ — ПОВЕРИТЕЛНО
           </p>
           <p
@@ -580,12 +580,12 @@ function AccuseSection({ case_ }: { case_: (typeof cases)[0] }) {
           href="/shop"
           style={{
             display: "inline-block",
-            background: "linear-gradient(135deg, #C026D3, #9b1cb5)",
+            background: "linear-gradient(135deg, #DC143C, #8B0000)",
             color: "white",
             textDecoration: "none",
             padding: "12px 28px",
             borderRadius: "4px",
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             fontSize: "1rem",
           }}
         >
@@ -611,7 +611,7 @@ function AccuseSection({ case_ }: { case_: (typeof cases)[0] }) {
     <div style={{ maxWidth: "600px" }}>
       <h2
         style={{
-          fontFamily: "'Special Elite', cursive",
+          fontFamily: "'Cinzel Decorative', serif",
           color: "#E8E8E8",
           fontSize: "1.5rem",
           marginBottom: "0.5rem",
@@ -648,7 +648,7 @@ function AccuseSection({ case_ }: { case_: (typeof cases)[0] }) {
             style={{
               display: "block",
               color: "#C8A96E",
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               fontSize: "0.85rem",
               letterSpacing: "0.1em",
               marginBottom: "0.75rem",
@@ -695,7 +695,7 @@ function AccuseSection({ case_ }: { case_: (typeof cases)[0] }) {
             style={{
               display: "block",
               color: "#C8A96E",
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               fontSize: "0.85rem",
               letterSpacing: "0.1em",
               marginBottom: "0.75rem",
@@ -740,7 +740,7 @@ function AccuseSection({ case_ }: { case_: (typeof cases)[0] }) {
           border: "none",
           padding: "16px",
           borderRadius: "4px",
-          fontFamily: "'Special Elite', cursive",
+          fontFamily: "'Cinzel Decorative', serif",
           fontSize: "1.1rem",
           cursor: killer && motive ? "pointer" : "not-allowed",
           letterSpacing: "0.05em",

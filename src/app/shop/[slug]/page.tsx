@@ -35,7 +35,7 @@ export default async function CaseDetailPage({
             alignItems: "center",
             gap: "4px",
             marginBottom: "2rem",
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             transition: "color 0.2s",
           }}
         >
@@ -102,7 +102,7 @@ export default async function CaseDetailPage({
               />
               <p
                 style={{
-                  fontFamily: "'Special Elite', cursive",
+                  fontFamily: "'Cinzel Decorative', serif",
                   color: "#C8A96E",
                   fontSize: "0.75rem",
                   letterSpacing: "0.12em",
@@ -159,10 +159,10 @@ export default async function CaseDetailPage({
             <div
               style={{
                 display: "inline-block",
-                background: "rgba(192,38,211,0.1)",
-                border: "1px solid rgba(192,38,211,0.3)",
-                color: "#C026D3",
-                fontFamily: "'Special Elite', cursive",
+                background: "rgba(220,20,60,0.08)",
+                border: "1px solid rgba(220,20,60,0.25)",
+                color: "#DC143C",
+                fontFamily: "'Cinzel Decorative', serif",
                 fontSize: "0.75rem",
                 letterSpacing: "0.12em",
                 padding: "4px 14px",
@@ -175,7 +175,7 @@ export default async function CaseDetailPage({
 
             <h1
               style={{
-                fontFamily: "'Special Elite', cursive",
+                fontFamily: "'Cinzel Decorative', serif",
                 fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
                 color: "#E8E8E8",
                 lineHeight: 1.2,
@@ -188,7 +188,7 @@ export default async function CaseDetailPage({
               style={{
                 color: "#C8A96E",
                 fontSize: "1.1rem",
-                fontFamily: "'Special Elite', cursive",
+                fontFamily: "'Cinzel Decorative', serif",
                 letterSpacing: "0.04em",
                 marginBottom: "1.5rem",
               }}
@@ -216,10 +216,10 @@ export default async function CaseDetailPage({
                 { icon: <MapPin size={18} />, label: "Локация", value: c.location.split(",")[0] },
               ].map((item) => (
                 <div key={item.label} style={{ textAlign: "center", flex: "1", minWidth: "80px" }}>
-                  <div style={{ color: "#C026D3", marginBottom: "4px", display: "flex", justifyContent: "center" }}>
+                  <div style={{ color: "#DC143C", marginBottom: "4px", display: "flex", justifyContent: "center" }}>
                     {item.icon}
                   </div>
-                  <div style={{ color: "#8892A4", fontSize: "0.7rem", letterSpacing: "0.08em", fontFamily: "'Special Elite', cursive", textTransform: "uppercase" }}>
+                  <div style={{ color: "#8892A4", fontSize: "0.7rem", letterSpacing: "0.08em", fontFamily: "'Cinzel Decorative', serif", textTransform: "uppercase" }}>
                     {item.label}
                   </div>
                   <div style={{ color: "#E8E8E8", fontSize: "0.9rem", fontWeight: 600 }}>
@@ -231,7 +231,7 @@ export default async function CaseDetailPage({
 
             {/* Difficulty */}
             <div style={{ marginBottom: "1.5rem" }}>
-              <p style={{ color: "#8892A4", fontSize: "0.8rem", fontFamily: "'Special Elite', cursive", letterSpacing: "0.1em", marginBottom: "6px" }}>
+              <p style={{ color: "#8892A4", fontSize: "0.8rem", fontFamily: "'Cinzel Decorative', serif", letterSpacing: "0.1em", marginBottom: "6px" }}>
                 НИВО НА ТРУДНОСТ
               </p>
               <div style={{ display: "flex", gap: "6px", alignItems: "center" }}>
@@ -248,7 +248,7 @@ export default async function CaseDetailPage({
                     }}
                   />
                 ))}
-                <span style={{ color: "#DC143C", fontSize: "0.85rem", marginLeft: "8px", fontFamily: "'Special Elite', cursive" }}>
+                <span style={{ color: "#DC143C", fontSize: "0.85rem", marginLeft: "8px", fontFamily: "'Cinzel Decorative', serif" }}>
                   {c.difficulty === 5 ? "Майсторско" : c.difficulty === 4 ? "Трудно" : c.difficulty === 3 ? "Средно" : "Лесно"}
                 </span>
               </div>

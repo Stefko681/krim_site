@@ -15,7 +15,7 @@ export function ClientFormatSelector({ priceDigital, pricePhysical }: { priceDig
   return (
     <>
       <div style={{ marginBottom: "1.75rem" }}>
-        <p style={{ color: "#8892A4", fontSize: "0.8rem", fontFamily: "'Special Elite', cursive", letterSpacing: "0.1em", marginBottom: "0.75rem" }}>
+        <p style={{ color: "#8892A4", fontSize: "0.8rem", fontFamily: "'Cinzel Decorative', serif", letterSpacing: "0.1em", marginBottom: "0.75rem" }}>
           ФОРМАТ
         </p>
         <div style={{ display: "flex", gap: "0.75rem" }}>
@@ -29,15 +29,15 @@ export function ClientFormatSelector({ priceDigital, pricePhysical }: { priceDig
               style={{
                 flex: 1,
                 padding: "14px",
-                background: format === f.key ? "rgba(192,38,211,0.15)" : "rgba(11,12,16,0.5)",
-                border: format === f.key ? "2px solid #C026D3" : "1px solid rgba(200,169,110,0.2)",
+                background: format === f.key ? "rgba(220,20,60,0.1)" : "rgba(11,12,16,0.5)",
+                border: format === f.key ? "2px solid #DC143C" : "1px solid rgba(200,169,110,0.2)",
                 borderRadius: "6px",
                 cursor: "pointer",
                 textAlign: "left",
                 transition: "all 0.2s",
               }}
             >
-              <div style={{ color: format === f.key ? "#C026D3" : "#E8E8E8", fontFamily: "'Special Elite', cursive", fontSize: "0.9rem", marginBottom: "2px" }}>
+              <div style={{ color: format === f.key ? "#DC143C" : "#E8E8E8", fontFamily: "'Cinzel Decorative', serif", fontSize: "0.9rem", marginBottom: "2px" }}>
                 {f.label}
               </div>
               <div style={{ color: "#8892A4", fontSize: "0.75rem" }}>{f.sub}</div>
@@ -58,8 +58,8 @@ export function ClientFormatSelector({ priceDigital, pricePhysical }: { priceDig
         }}
       >
         <div>
-          <div style={{ color: "#8892A4", fontSize: "0.75rem", fontFamily: "'Special Elite', cursive", letterSpacing: "0.1em" }}>ЦЕНА</div>
-          <div style={{ color: "#C026D3", fontFamily: "'Special Elite', cursive", fontSize: "2rem" }}>
+          <div style={{ color: "#8892A4", fontSize: "0.75rem", fontFamily: "'Cinzel Decorative', serif", letterSpacing: "0.1em" }}>ЦЕНА</div>
+          <div style={{ color: "#DC143C", fontFamily: "'Cinzel Decorative', serif", fontSize: "2rem" }}>
             {price} лв
           </div>
           {format === "physical" && (
@@ -69,17 +69,17 @@ export function ClientFormatSelector({ priceDigital, pricePhysical }: { priceDig
         <button
           onClick={handleAddToCart}
           style={{
-            background: added ? "linear-gradient(135deg, #15803d, #166534)" : "linear-gradient(135deg, #C026D3, #9b1cb5)",
+            background: added ? "linear-gradient(135deg, #15803d, #166534)" : "linear-gradient(135deg, #DC143C, #8B0000)",
             color: "white",
             border: "none",
             padding: "14px 28px",
             borderRadius: "4px",
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             fontSize: "1rem",
             cursor: "pointer",
             letterSpacing: "0.05em",
             transition: "all 0.3s",
-            boxShadow: added ? "0 4px 20px rgba(21,128,61,0.4)" : "0 4px 20px rgba(192,38,211,0.4)",
+            boxShadow: added ? "0 4px 20px rgba(21,128,61,0.4)" : "0 4px 20px rgba(220,20,60,0.35)",
           }}
         >
           {added ? "✅ Добавено!" : format === "digital" ? "⚡ Свали Сега" : "🛒 Поръчай Кутия"}

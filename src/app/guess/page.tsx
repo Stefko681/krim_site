@@ -70,7 +70,7 @@ export default function GuessPage() {
           </div>
           <p
             style={{
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               color: "#8892A4",
               fontSize: "0.75rem",
               letterSpacing: "0.2em",
@@ -82,7 +82,7 @@ export default function GuessPage() {
           </p>
           <h1
             style={{
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               fontSize: "clamp(1.8rem, 5vw, 2.8rem)",
               color: "#E8E8E8",
               marginBottom: "0.75rem",
@@ -105,7 +105,7 @@ export default function GuessPage() {
             style={{
               display: "block",
               color: "#C8A96E",
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               fontSize: "0.8rem",
               letterSpacing: "0.12em",
               textTransform: "uppercase",
@@ -152,7 +152,7 @@ export default function GuessPage() {
                     alignItems: "center",
                     justifyContent: "center",
                     color: selectedCaseId === c.id ? "#DC143C" : "#C8A96E",
-                    fontFamily: "'Special Elite', cursive",
+                    fontFamily: "'Cinzel Decorative', serif",
                     fontSize: "0.85rem",
                     fontWeight: "bold",
                   }}
@@ -163,7 +163,7 @@ export default function GuessPage() {
                   <p
                     style={{
                       color: selectedCaseId === c.id ? "#E8E8E8" : "#C8A96E",
-                      fontFamily: "'Special Elite', cursive",
+                      fontFamily: "'Cinzel Decorative', serif",
                       fontSize: "1rem",
                       marginBottom: "2px",
                       transition: "color 0.2s",
@@ -180,7 +180,7 @@ export default function GuessPage() {
                     style={{
                       marginLeft: "auto",
                       color: "#DC143C",
-                      fontFamily: "'Special Elite', cursive",
+                      fontFamily: "'Cinzel Decorative', serif",
                       fontSize: "0.75rem",
                       letterSpacing: "0.1em",
                     }}
@@ -201,7 +201,7 @@ export default function GuessPage() {
                 display: "inline-block",
                 border: "5px solid #DC143C",
                 color: "#DC143C",
-                fontFamily: "'Special Elite', cursive",
+                fontFamily: "'Cinzel Decorative', serif",
                 fontSize: "clamp(1.5rem, 5vw, 2.5rem)",
                 letterSpacing: "0.08em",
                 padding: "16px 40px",
@@ -217,7 +217,7 @@ export default function GuessPage() {
               <br />
               <span style={{ fontSize: "0.6em", display: "block" }}>ГРЕШЕН ЗАПОДОЗРЯН</span>
             </div>
-            <p style={{ color: "#C8A96E", fontFamily: "'Special Elite', cursive", fontSize: "1.1rem", marginBottom: "0.75rem" }}>
+            <p style={{ color: "#C8A96E", fontFamily: "'Cinzel Decorative', serif", fontSize: "1.1rem", marginBottom: "0.75rem" }}>
               Грешен извод, детектив. Истинският виновник все още се измъква.
             </p>
             <p style={{ color: "#8892A4", marginBottom: "2rem", lineHeight: 1.7 }}>
@@ -232,7 +232,7 @@ export default function GuessPage() {
                 padding: "12px 28px",
                 borderRadius: "4px",
                 cursor: "pointer",
-                fontFamily: "'Special Elite', cursive",
+                fontFamily: "'Cinzel Decorative', serif",
                 fontSize: "0.95rem",
                 transition: "all 0.3s",
               }}
@@ -251,7 +251,7 @@ export default function GuessPage() {
                 display: "inline-block",
                 border: "5px solid #15803d",
                 color: "#4ade80",
-                fontFamily: "'Special Elite', cursive",
+                fontFamily: "'Cinzel Decorative', serif",
                 fontSize: "clamp(1.5rem, 5vw, 2.5rem)",
                 letterSpacing: "0.08em",
                 padding: "16px 40px",
@@ -267,7 +267,7 @@ export default function GuessPage() {
               <br />
               <span style={{ fontSize: "0.9em" }}>Е ЗАКРИТ</span>
             </div>
-            <p style={{ color: "#4ade80", fontFamily: "'Special Elite', cursive", fontSize: "1.2rem", marginBottom: "0.5rem" }}>
+            <p style={{ color: "#4ade80", fontFamily: "'Cinzel Decorative', serif", fontSize: "1.2rem", marginBottom: "0.5rem" }}>
               🎉 Брилянтно детектив! Ти разкри виновника!
             </p>
             <p style={{ color: "#8892A4", marginBottom: "2rem" }}>
@@ -286,7 +286,7 @@ export default function GuessPage() {
                   padding: "11px 24px",
                   borderRadius: "4px",
                   cursor: "pointer",
-                  fontFamily: "'Special Elite', cursive",
+                  fontFamily: "'Cinzel Decorative', serif",
                   fontSize: "0.9rem",
                 }}
               >
@@ -296,12 +296,12 @@ export default function GuessPage() {
                 href="/shop"
                 style={{
                   display: "inline-block",
-                  background: "linear-gradient(135deg, #C026D3, #9b1cb5)",
+                  background: "linear-gradient(135deg, #DC143C, #8B0000)",
                   color: "white",
                   textDecoration: "none",
                   padding: "11px 24px",
                   borderRadius: "4px",
-                  fontFamily: "'Special Elite', cursive",
+                  fontFamily: "'Cinzel Decorative', serif",
                   fontSize: "0.9rem",
                 }}
               >
@@ -339,7 +339,7 @@ export default function GuessPage() {
                   style={{
                     display: "block",
                     color: "#C8A96E",
-                    fontFamily: "'Special Elite', cursive",
+                    fontFamily: "'Cinzel Decorative', serif",
                     fontSize: "0.85rem",
                     letterSpacing: "0.1em",
                     marginBottom: "0.75rem",
@@ -387,7 +387,7 @@ export default function GuessPage() {
                 border: "none",
                 padding: "16px",
                 borderRadius: "4px",
-                fontFamily: "'Special Elite', cursive",
+                fontFamily: "'Cinzel Decorative', serif",
                 fontSize: "1.1rem",
                 cursor: killer ? "pointer" : "not-allowed",
                 letterSpacing: "0.05em",
@@ -408,11 +408,11 @@ export default function GuessPage() {
 
             <p style={{ color: "#8892A4", fontSize: "0.78rem", textAlign: "center", marginTop: "1.5rem", lineHeight: 1.6 }}>
               Искаш повече улики? Вземи пълното досие от{" "}
-              <a href="/shop" style={{ color: "#C026D3", textDecoration: "none" }}>
+              <a href="/shop" style={{ color: "#DC143C", textDecoration: "none" }}>
                 Магазина
               </a>{" "}
               и използвай{" "}
-              <a href="/portal" style={{ color: "#C026D3", textDecoration: "none" }}>
+              <a href="/portal" style={{ color: "#DC143C", textDecoration: "none" }}>
                 Детективския Портал
               </a>{" "}
               за жокери.

@@ -31,7 +31,7 @@ export default function ShopPage() {
       >
         <div
           style={{
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             color: "#8892A4",
             fontSize: "0.75rem",
             letterSpacing: "0.2em",
@@ -43,7 +43,7 @@ export default function ShopPage() {
         </div>
         <h1
           style={{
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             fontSize: "clamp(2rem, 5vw, 3.5rem)",
             color: "#E8E8E8",
             marginBottom: "1rem",
@@ -67,7 +67,7 @@ export default function ShopPage() {
             alignItems: "center",
           }}
         >
-          <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "#C8A96E", fontFamily: "'Special Elite', cursive" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "#C8A96E", fontFamily: "'Cinzel Decorative', serif" }}>
             <Filter size={16} />
             Филтри:
           </div>
@@ -77,13 +77,13 @@ export default function ShopPage() {
                 key={d}
                 onClick={() => setDifficulty(d)}
                 style={{
-                  background: difficulty === d ? "rgba(192,38,211,0.2)" : "rgba(31,40,51,0.5)",
-                  border: difficulty === d ? "1px solid #C026D3" : "1px solid rgba(200,169,110,0.2)",
-                  color: difficulty === d ? "#C026D3" : "#8892A4",
+                  background: difficulty === d ? "rgba(220,20,60,0.15)" : "rgba(31,40,51,0.5)",
+                  border: difficulty === d ? "1px solid #DC143C" : "1px solid rgba(200,169,110,0.2)",
+                  color: difficulty === d ? "#DC143C" : "#8892A4",
                   padding: "6px 14px",
                   cursor: "pointer",
                   borderRadius: "4px",
-                  fontFamily: "'Special Elite', cursive",
+                  fontFamily: "'Cinzel Decorative', serif",
                   fontSize: "0.85rem",
                   transition: "all 0.2s",
                 }}
@@ -103,7 +103,7 @@ export default function ShopPage() {
               color: "#C8A96E",
               padding: "6px 12px",
               borderRadius: "4px",
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               fontSize: "0.85rem",
               cursor: "pointer",
               outline: "none",
@@ -131,7 +131,7 @@ export default function ShopPage() {
 
         {filtered.length === 0 && (
           <div style={{ textAlign: "center", padding: "4rem", color: "#8892A4" }}>
-            <p style={{ fontFamily: "'Special Elite', cursive", fontSize: "1.2rem" }}>
+            <p style={{ fontFamily: "'Cinzel Decorative', serif", fontSize: "1.2rem" }}>
               Няма намерени досиета.
             </p>
           </div>
@@ -183,7 +183,7 @@ function ShopCard({ c }: { c: (typeof cases)[0] }) {
             style={{
               border: "4px solid #DC143C",
               color: "#DC143C",
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               fontSize: "2rem",
               letterSpacing: "0.06em",
               padding: "8px 20px",
@@ -203,7 +203,7 @@ function ShopCard({ c }: { c: (typeof cases)[0] }) {
             background: "rgba(11,12,16,0.85)",
             border: "1px solid rgba(200,169,110,0.3)",
             color: "#C8A96E",
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             fontSize: "0.7rem",
             letterSpacing: "0.1em",
             padding: "3px 10px",
@@ -222,7 +222,7 @@ function ShopCard({ c }: { c: (typeof cases)[0] }) {
             marginBottom: "0.5rem",
           }}
         >
-          <span style={{ color: "#8892A4", fontSize: "0.75rem", fontFamily: "'Special Elite', cursive", letterSpacing: "0.1em" }}>
+          <span style={{ color: "#8892A4", fontSize: "0.75rem", fontFamily: "'Cinzel Decorative', serif", letterSpacing: "0.1em" }}>
             {c.crimeType}
           </span>
           <div style={{ display: "flex", gap: "2px" }}>
@@ -242,7 +242,7 @@ function ShopCard({ c }: { c: (typeof cases)[0] }) {
 
         <h3
           style={{
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             fontSize: "1.15rem",
             color: "#E8E8E8",
             marginBottom: "0.35rem",
@@ -276,11 +276,11 @@ function ShopCard({ c }: { c: (typeof cases)[0] }) {
               style={{
                 flex: 1,
                 padding: "7px",
-                background: format === fmt ? "rgba(192,38,211,0.2)" : "rgba(11,12,16,0.5)",
-                border: format === fmt ? "1px solid #C026D3" : "1px solid rgba(200,169,110,0.2)",
-                color: format === fmt ? "#C026D3" : "#8892A4",
+                background: format === fmt ? "rgba(220,20,60,0.15)" : "rgba(11,12,16,0.5)",
+                border: format === fmt ? "1px solid #DC143C" : "1px solid rgba(200,169,110,0.2)",
+                color: format === fmt ? "#DC143C" : "#8892A4",
                 borderRadius: "4px",
-                fontFamily: "'Special Elite', cursive",
+                fontFamily: "'Cinzel Decorative', serif",
                 fontSize: "0.78rem",
                 cursor: "pointer",
                 transition: "all 0.2s",
@@ -293,7 +293,7 @@ function ShopCard({ c }: { c: (typeof cases)[0] }) {
 
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <div>
-            <span style={{ color: "#C026D3", fontFamily: "'Special Elite', cursive", fontSize: "1.3rem" }}>
+            <span style={{ color: "#DC143C", fontFamily: "'Cinzel Decorative', serif", fontSize: "1.3rem" }}>
               {format === "digital" ? c.priceDigital : c.pricePhysical} лв
             </span>
             {format === "physical" && (
@@ -305,11 +305,11 @@ function ShopCard({ c }: { c: (typeof cases)[0] }) {
           <Link
             href={`/shop/${c.slug}`}
             style={{
-              background: "linear-gradient(135deg, #C026D3, #9b1cb5)",
+              background: "linear-gradient(135deg, #DC143C, #8B0000)",
               color: "white",
               textDecoration: "none",
               padding: "8px 18px",
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               fontSize: "0.85rem",
               borderRadius: "3px",
               display: "flex",

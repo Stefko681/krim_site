@@ -79,7 +79,7 @@ export default function ConfiguratorPage() {
             style={{
               border: "3px solid #15803d",
               color: "#4ade80",
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               fontSize: "1.5rem",
               letterSpacing: "0.1em",
               padding: "10px 30px",
@@ -94,7 +94,7 @@ export default function ConfiguratorPage() {
           </div>
           <h2
             style={{
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               color: "#E8E8E8",
               fontSize: "1.8rem",
               marginBottom: "1rem",
@@ -109,12 +109,12 @@ export default function ConfiguratorPage() {
             href="/"
             style={{
               display: "inline-block",
-              background: "linear-gradient(135deg, #C026D3, #9b1cb5)",
+              background: "linear-gradient(135deg, #DC143C, #8B0000)",
               color: "white",
               textDecoration: "none",
               padding: "12px 28px",
               borderRadius: "4px",
-              fontFamily: "'Special Elite', cursive",
+              fontFamily: "'Cinzel Decorative', serif",
               fontSize: "1rem",
             }}
           >
@@ -151,7 +151,7 @@ export default function ConfiguratorPage() {
           style={{
             display: "inline-block",
             color: "#8892A4",
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             fontSize: "0.75rem",
             letterSpacing: "0.2em",
             textTransform: "uppercase",
@@ -162,7 +162,7 @@ export default function ConfiguratorPage() {
         </div>
         <h1
           style={{
-            fontFamily: "'Special Elite', cursive",
+            fontFamily: "'Cinzel Decorative', serif",
             fontSize: "clamp(2rem, 5vw, 3rem)",
             color: "#E8E8E8",
             marginBottom: "0.75rem",
@@ -204,7 +204,7 @@ export default function ConfiguratorPage() {
               left: "0",
               width: `${((step - 1) / 3) * 100}%`,
               height: "2px",
-              background: "linear-gradient(90deg, #C026D3, #9b1cb5)",
+              background: "linear-gradient(90deg, #DC143C, #8B0000)",
               zIndex: 1,
               transition: "width 0.4s ease",
             }}
@@ -220,23 +220,23 @@ export default function ConfiguratorPage() {
                   alignItems: "center",
                   justifyContent: "center",
                   background:
-                    step > s.num ? "#15803d" : step === s.num ? "#C026D3" : "rgba(31,40,51,0.8)",
+                    step > s.num ? "#15803d" : step === s.num ? "#DC143C" : "rgba(31,40,51,0.8)",
                   border:
-                    step > s.num ? "2px solid #15803d" : step === s.num ? "2px solid #C026D3" : "2px solid rgba(200,169,110,0.2)",
+                    step > s.num ? "2px solid #15803d" : step === s.num ? "2px solid #DC143C" : "2px solid rgba(200,169,110,0.2)",
                   transition: "all 0.3s",
                   color: step >= s.num ? "white" : "#8892A4",
-                  fontFamily: "'Special Elite', cursive",
+                  fontFamily: "'Cinzel Decorative', serif",
                   fontSize: "0.9rem",
-                  boxShadow: step === s.num ? "0 0 12px rgba(192,38,211,0.5)" : "none",
+                  boxShadow: step === s.num ? "0 0 12px rgba(220,20,60,0.4)" : "none",
                 }}
               >
                 {step > s.num ? <CheckCircle size={18} /> : s.num}
               </div>
               <span
                 style={{
-                  fontFamily: "'Special Elite', cursive",
+                  fontFamily: "'Cinzel Decorative', serif",
                   fontSize: "0.75rem",
-                  color: step === s.num ? "#C026D3" : "#8892A4",
+                  color: step === s.num ? "#DC143C" : "#8892A4",
                   letterSpacing: "0.05em",
                 }}
               >
@@ -262,7 +262,7 @@ export default function ConfiguratorPage() {
             <div>
               <h2
                 style={{
-                  fontFamily: "'Special Elite', cursive",
+                  fontFamily: "'Cinzel Decorative', serif",
                   color: "#E8E8E8",
                   fontSize: "1.4rem",
                   marginBottom: "0.5rem",
@@ -280,27 +280,27 @@ export default function ConfiguratorPage() {
                     onClick={() => updateForm("theme", t.id)}
                     style={{
                       padding: "1.5rem",
-                      background: form.theme === t.id ? "rgba(192,38,211,0.15)" : "rgba(11,12,16,0.5)",
-                      border: form.theme === t.id ? "2px solid #C026D3" : "2px solid rgba(200,169,110,0.15)",
+                      background: form.theme === t.id ? "rgba(220,20,60,0.1)" : "rgba(11,12,16,0.5)",
+                      border: form.theme === t.id ? "2px solid #DC143C" : "2px solid rgba(200,169,110,0.15)",
                       borderRadius: "6px",
                       cursor: "pointer",
                       textAlign: "left",
                       transition: "all 0.2s",
-                      boxShadow: form.theme === t.id ? "0 0 15px rgba(192,38,211,0.2)" : "none",
+                      boxShadow: form.theme === t.id ? "0 0 15px rgba(220,20,60,0.15)" : "none",
                     }}
                   >
                     <div style={{ fontSize: "2rem", marginBottom: "0.5rem" }}>{t.icon}</div>
                     <div
                       style={{
-                        fontFamily: "'Special Elite', cursive",
-                        color: form.theme === t.id ? "#C026D3" : "#E8E8E8",
+                        fontFamily: "'Cinzel Decorative', serif",
+                        color: form.theme === t.id ? "#DC143C" : "#E8E8E8",
                         fontSize: "1rem",
                         marginBottom: "4px",
                       }}
                     >
                       {t.label}
                     </div>
-                    <div style={{ color: "#C026D3", fontFamily: "'Special Elite', cursive", fontSize: "0.9rem" }}>
+                    <div style={{ color: "#DC143C", fontFamily: "'Cinzel Decorative', serif", fontSize: "0.9rem" }}>
                       от {t.price} лв
                     </div>
                   </button>
@@ -314,7 +314,7 @@ export default function ConfiguratorPage() {
             <div>
               <h2
                 style={{
-                  fontFamily: "'Special Elite', cursive",
+                  fontFamily: "'Cinzel Decorative', serif",
                   color: "#E8E8E8",
                   fontSize: "1.4rem",
                   marginBottom: "0.5rem",
@@ -335,7 +335,7 @@ export default function ConfiguratorPage() {
                     style={{
                       display: "block",
                       color: "#C8A96E",
-                      fontFamily: "'Special Elite', cursive",
+                      fontFamily: "'Cinzel Decorative', serif",
                       fontSize: "0.85rem",
                       letterSpacing: "0.08em",
                       marginBottom: "0.5rem",
@@ -361,7 +361,7 @@ export default function ConfiguratorPage() {
                       outline: "none",
                       transition: "border-color 0.2s",
                     }}
-                    onFocus={(e) => { e.currentTarget.style.borderColor = "#C026D3"; }}
+                    onFocus={(e) => { e.currentTarget.style.borderColor = "#DC143C"; }}
                     onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(200,169,110,0.25)"; }}
                   />
                 </div>
@@ -371,7 +371,7 @@ export default function ConfiguratorPage() {
                   style={{
                     display: "block",
                     color: "#C8A96E",
-                    fontFamily: "'Special Elite', cursive",
+                    fontFamily: "'Cinzel Decorative', serif",
                     fontSize: "0.85rem",
                     letterSpacing: "0.08em",
                     marginBottom: "0.5rem",
@@ -397,7 +397,7 @@ export default function ConfiguratorPage() {
                     outline: "none",
                     resize: "vertical",
                   }}
-                  onFocus={(e) => { e.currentTarget.style.borderColor = "#C026D3"; }}
+                  onFocus={(e) => { e.currentTarget.style.borderColor = "#DC143C"; }}
                   onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(200,169,110,0.25)"; }}
                 />
               </div>
@@ -409,7 +409,7 @@ export default function ConfiguratorPage() {
             <div>
               <h2
                 style={{
-                  fontFamily: "'Special Elite', cursive",
+                  fontFamily: "'Cinzel Decorative', serif",
                   color: "#E8E8E8",
                   fontSize: "1.4rem",
                   marginBottom: "0.5rem",
@@ -434,7 +434,7 @@ export default function ConfiguratorPage() {
                         alignItems: "center",
                         justifyContent: "center",
                         color: "#DC143C",
-                        fontFamily: "'Special Elite', cursive",
+                        fontFamily: "'Cinzel Decorative', serif",
                         fontSize: "0.8rem",
                       }}
                     >
@@ -456,7 +456,7 @@ export default function ConfiguratorPage() {
                         fontSize: "0.9rem",
                         outline: "none",
                       }}
-                      onFocus={(e) => { e.currentTarget.style.borderColor = "#C026D3"; }}
+                      onFocus={(e) => { e.currentTarget.style.borderColor = "#DC143C"; }}
                       onBlur={(e) => { e.currentTarget.style.borderColor = "rgba(200,169,110,0.25)"; }}
                     />
                     {form.suspects.length > 2 && (
@@ -490,15 +490,15 @@ export default function ConfiguratorPage() {
                     padding: "10px 18px",
                     borderRadius: "4px",
                     cursor: "pointer",
-                    fontFamily: "'Special Elite', cursive",
+                    fontFamily: "'Cinzel Decorative', serif",
                     fontSize: "0.9rem",
                     transition: "all 0.2s",
                     width: "100%",
                     justifyContent: "center",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = "#C026D3";
-                    e.currentTarget.style.color = "#C026D3";
+                    e.currentTarget.style.borderColor = "#DC143C";
+                    e.currentTarget.style.color = "#DC143C";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.borderColor = "rgba(200,169,110,0.3)";
@@ -517,7 +517,7 @@ export default function ConfiguratorPage() {
             <div>
               <h2
                 style={{
-                  fontFamily: "'Special Elite', cursive",
+                  fontFamily: "'Cinzel Decorative', serif",
                   color: "#E8E8E8",
                   fontSize: "1.4rem",
                   marginBottom: "0.5rem",
@@ -553,7 +553,7 @@ export default function ConfiguratorPage() {
                       borderBottom: "1px solid rgba(200,169,110,0.08)",
                     }}
                   >
-                    <span style={{ color: "#8892A4", fontFamily: "'Special Elite', cursive", fontSize: "0.85rem" }}>
+                    <span style={{ color: "#8892A4", fontFamily: "'Cinzel Decorative', serif", fontSize: "0.85rem" }}>
                       {row.label}:
                     </span>
                     <span style={{ color: "#E8E8E8", fontFamily: "'Courier Prime', monospace", fontSize: "0.85rem", textAlign: "right", maxWidth: "60%" }}>
@@ -564,8 +564,8 @@ export default function ConfiguratorPage() {
               </div>
               <div
                 style={{
-                  background: "rgba(192,38,211,0.08)",
-                  border: "1px solid rgba(192,38,211,0.25)",
+                  background: "rgba(220,20,60,0.06)",
+                  border: "1px solid rgba(220,20,60,0.2)",
                   borderRadius: "6px",
                   padding: "1.25rem",
                   marginBottom: "1.5rem",
@@ -575,10 +575,10 @@ export default function ConfiguratorPage() {
                 }}
               >
                 <div>
-                  <p style={{ color: "#8892A4", fontSize: "0.78rem", fontFamily: "'Special Elite', cursive" }}>
+                  <p style={{ color: "#8892A4", fontSize: "0.78rem", fontFamily: "'Cinzel Decorative', serif" }}>
                     ОРИЕНТИРОВЪЧНА ЦЕНА
                   </p>
-                  <p style={{ color: "#C026D3", fontFamily: "'Special Elite', cursive", fontSize: "1.8rem" }}>
+                  <p style={{ color: "#DC143C", fontFamily: "'Cinzel Decorative', serif", fontSize: "1.8rem" }}>
                     {selectedTheme?.price || "—"} лв
                   </p>
                   <p style={{ color: "#8892A4", fontSize: "0.75rem" }}>
@@ -591,17 +591,17 @@ export default function ConfiguratorPage() {
                 onClick={handleSubmit}
                 style={{
                   width: "100%",
-                  background: "linear-gradient(135deg, #C026D3, #9b1cb5)",
+                  background: "linear-gradient(135deg, #DC143C, #8B0000)",
                   color: "white",
                   border: "none",
                   padding: "16px",
                   borderRadius: "4px",
-                  fontFamily: "'Special Elite', cursive",
+                  fontFamily: "'Cinzel Decorative', serif",
                   fontSize: "1.1rem",
                   cursor: "pointer",
                   letterSpacing: "0.05em",
                   transition: "all 0.3s",
-                  boxShadow: "0 4px 20px rgba(192,38,211,0.4)",
+                  boxShadow: "0 4px 20px rgba(220,20,60,0.35)",
                 }}
                 onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; }}
                 onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; }}
@@ -631,7 +631,7 @@ export default function ConfiguratorPage() {
                 padding: "10px 20px",
                 borderRadius: "4px",
                 cursor: "pointer",
-                fontFamily: "'Special Elite', cursive",
+                fontFamily: "'Cinzel Decorative', serif",
                 fontSize: "0.9rem",
                 display: "flex",
                 alignItems: "center",
@@ -654,13 +654,13 @@ export default function ConfiguratorPage() {
               }}
               disabled={step === 1 && !form.theme}
               style={{
-                background: "linear-gradient(135deg, #C026D3, #9b1cb5)",
+                background: "linear-gradient(135deg, #DC143C, #8B0000)",
                 color: "white",
                 border: "none",
                 padding: "10px 24px",
                 borderRadius: "4px",
                 cursor: step === 1 && !form.theme ? "not-allowed" : "pointer",
-                fontFamily: "'Special Elite', cursive",
+                fontFamily: "'Cinzel Decorative', serif",
                 fontSize: "0.9rem",
                 display: "flex",
                 alignItems: "center",
