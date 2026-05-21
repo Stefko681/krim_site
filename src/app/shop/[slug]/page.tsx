@@ -276,10 +276,10 @@ export default async function CaseDetailPage({
               <span style={{ fontSize: "1.2rem" }}>🔑</span>
               <p style={{ color: "#8892A4", fontSize: "0.85rem" }}>
                 В кутията ще намериш уникален код за достъп до{" "}
-                <Link href="/portal" style={{ color: "#DC143C" }}>
-                  Детективския Портал
+                <Link href="/zhokeri" style={{ color: "#DC143C" }}>
+                  Жокерите
                 </Link>
-                — за жокери и финално обвинение.
+                — за насоки и помощ при разследването.
               </p>
             </div>
           </div>

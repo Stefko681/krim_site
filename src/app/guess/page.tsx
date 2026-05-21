@@ -15,10 +15,9 @@ export default function GuessPage() {
 
   // Extra decoy suspects for each case (not the killer)
   const decoySuspects: Record<string, string[]> = {
-    "1": ["Виктория Стоева", "Атанас Велев", "Никола Петров", "Мария Грозева"],
-    "2": ["Виктор Асенов", "Стефан Неделчев", "Карина Иванова", "Десислава Тотева"],
-    "3": ["Теодора Стоева", "Камен Вълчев", "Ивана Маринова", "Георги Станчев"],
-    "4": ["Киара", "Стефко", "Даивд Де Хеа"],
+    "1": ["Киара", "Стефко", "Даивд Де Хеа"],
+    "2": ["Димитър", "Мария", "Георги"],
+    "3": ["Тодор", "Васил", "Стефан"],
   };
 
   // Shuffle suspects when case changes
@@ -28,7 +27,7 @@ export default function GuessPage() {
     setShuffledSuspects(all);
     setKiller("");
     setResult("idle");
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedCaseId]);
 
   const handleSubmit = () => {
@@ -172,7 +171,7 @@ export default function GuessPage() {
                     {c.title}
                   </p>
                   <p style={{ color: "#8892A4", fontFamily: "'Courier Prime', monospace", fontSize: "0.8rem" }}>
-                    Жертва: {c.victim} · {c.location}
+                    Изчезнал/а: {c.victim} · {c.location}
                   </p>
                 </div>
                 {selectedCaseId === c.id && (
@@ -412,10 +411,10 @@ export default function GuessPage() {
                 Магазина
               </a>{" "}
               и използвай{" "}
-              <a href="/portal" style={{ color: "#DC143C", textDecoration: "none" }}>
-                Детективския Портал
+              <a href="/zhokeri" style={{ color: "#DC143C", textDecoration: "none" }}>
+                Жокерите
               </a>{" "}
-              за жокери.
+              ако имаш нужда от помощ.
             </p>
           </>
         )}

@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { cases, testimonials } from "@/lib/data";
+import { cases, testimonials, CURRENCY } from "@/lib/data";
 import { Shield, Package, Users, FileText, Plus, Edit, Trash2, Check, X, Settings } from "lucide-react";
 
 const ADMIN_PASSWORD = "dosie2024";
@@ -297,8 +297,8 @@ function CasesTab() {
               <p style={{ color: "#8892A4", fontSize: "0.8rem" }}>
                 Код: <span style={{ color: "#DC143C", fontFamily: "'Courier Prime', monospace" }}>{c.portalCode}</span>
                 {" · "}Трудност: {c.difficulty}/5
-                {" · "}Дигитално: {c.priceDigital} лв
-                {" · "}Физическо: {c.pricePhysical} лв
+                {" · "}Дигитално: {c.priceDigital} {CURRENCY}
+                {" · "}Физическо: {c.pricePhysical} {CURRENCY}
               </p>
             </div>
             <div style={{ display: "flex", gap: "0.5rem" }}>
@@ -397,7 +397,7 @@ function OrdersTab() {
                 <td style={{ padding: "12px", color: "#DC143C", fontFamily: "'Courier Prime', monospace", fontSize: "0.85rem" }}>{o.id}</td>
                 <td style={{ padding: "12px", color: "#E8E8E8", fontSize: "0.9rem" }}>{o.case}</td>
                 <td style={{ padding: "12px", color: "#8892A4", fontSize: "0.85rem" }}>{o.format}</td>
-                <td style={{ padding: "12px", color: "#C8A96E", fontFamily: "'Cinzel Decorative', serif" }}>{o.total} лв</td>
+                <td style={{ padding: "12px", color: "#C8A96E", fontFamily: "'Cinzel Decorative', serif" }}>{o.total} {CURRENCY}</td>
                 <td style={{ padding: "12px" }}>
                   <span style={{ color: statusColor(o.status), fontSize: "0.85rem", fontFamily: "'Cinzel Decorative', serif" }}>
                     ● {o.status}

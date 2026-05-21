@@ -78,7 +78,7 @@ export default function Footer() {
           {[
             { href: "/shop", label: "Магазин — Досиета" },
             { href: "/configurator", label: "Custom Случай" },
-            { href: "/portal", label: "Детективски Портал" },
+            { href: "/zhokeri", label: "Жокери" },
             { href: "/admin", label: "Администрация" },
           ].map((link) => (
             <Link

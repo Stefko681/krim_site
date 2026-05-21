@@ -1,7 +1,8 @@
 "use client";
 import { useState } from "react";
-import { themes } from "@/lib/data";
-import { ChevronRight, ChevronLeft, CheckCircle, Plus, Trash2 } from "lucide-react";
+import { themes, CURRENCY } from "@/lib/data";
+import { ChevronRight, ChevronLeft, CheckCircle, Plus, Trash2, Loader2, AlertTriangle } from "lucide-react";
+import { supabase, isSupabaseConfigured } from "@/lib/supabaseClient";
 
 type Step = 1 | 2 | 3 | 4;
 
@@ -12,11 +13,14 @@ interface FormData {
   insideJokes: string;
   playerName: string;
   suspects: string[];
+  email: string;
 }
 
 export default function ConfiguratorPage() {
   const [step, setStep] = useState<Step>(1);
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [form, setForm] = useState<FormData>({
     theme: "",
     victimName: "",
@@ -24,6 +28,7 @@ export default function ConfiguratorPage() {
     insideJokes: "",
     playerName: "",
     suspects: ["", ""],
+    email: "",
   });
 
   const selectedTheme = themes.find((t) => t.id === form.theme);
@@ -43,13 +48,66 @@ export default function ConfiguratorPage() {
     updateForm("suspects", s);
   };
 
+  // Validates each step to ensure perfect data before proceeding
+  const isStepValid = (s: Step) => {
+    if (s === 1) return !!form.theme;
+    if (s === 2) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return (
+        !!form.email &&
+        emailRegex.test(form.email) &&
+        form.victimName.trim() !== "" &&
+        form.playerName.trim() !== ""
+      );
+    }
+    if (s === 3) {
+      return form.suspects.filter((sus) => sus.trim() !== "").length >= 2;
+    }
+    return true;
+  };
+
+  const nextDisabled = !isStepValid(step);
+
   const handleSubmit = async () => {
-    await fetch("/api/configurator", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    }).catch(() => { });
-    setSubmitted(true);
+    setLoading(true);
+    setErrorMsg(null);
+
+    try {
+      if (isSupabaseConfigured()) {
+        const { error } = await supabase
+          .from("custom_cases")
+          .insert([{
+            theme: form.theme,
+            victim_name: form.victimName,
+            location: form.location,
+            inside_jokes: form.insideJokes,
+            player_name: form.playerName,
+            suspects: form.suspects.filter(Boolean),
+            email: form.email,
+          }]);
+
+        if (error) {
+          throw new Error(error.message);
+        }
+      } else {
+        // Fallback for development/demo mode before Supabase credentials are put in
+        console.warn("Supabase is not configured. Saving custom case locally to localStorage for demonstration.");
+        try {
+          const demoCases = JSON.parse(localStorage.getItem("demo_custom_cases") || "[]");
+          demoCases.push(form);
+          localStorage.setItem("demo_custom_cases", JSON.stringify(demoCases));
+        } catch (e) {
+          // localStorage failsafe
+        }
+      }
+
+      setSubmitted(true);
+    } catch (err: any) {
+      console.error("Error saving custom case:", err);
+      setErrorMsg("Неуспешно изпращане по поверителния канал. Моля, опитайте отново.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const steps = [
@@ -103,7 +161,7 @@ export default function ConfiguratorPage() {
             Досието ти е в процес на изготвяне!
           </h2>
           <p style={{ color: "#C8A96E", lineHeight: 1.7, marginBottom: "2rem" }}>
-            Ще се свържем с теб в рамките на <strong>48 часа</strong> с персонализирана оферта и детайли по случая. Провери имейла си.
+            Благодарим ти, детектив! Ще се свържем с теб на имейл <strong>{form.email}</strong> в рамките на <strong>48 часа</strong> с персонализирана оферта и подробен план за вашия случай.
           </p>
           <a
             href="/"
@@ -116,7 +174,11 @@ export default function ConfiguratorPage() {
               borderRadius: "4px",
               fontFamily: "'Cinzel Decorative', serif",
               fontSize: "1rem",
+              transition: "all 0.3s",
+              boxShadow: "0 4px 15px rgba(220,20,60,0.3)",
             }}
+            onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; }}
           >
             ← Начална Страница
           </a>
@@ -271,7 +333,7 @@ export default function ConfiguratorPage() {
                 Стъпка 1: Избери Тема
               </h2>
               <p style={{ color: "#8892A4", fontSize: "0.9rem", marginBottom: "2rem" }}>
-                Тематата определя сценарията и реквизита на случая.
+                Темата определя сценария и реквизита на случая.
               </p>
               <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
                 {themes.map((t) => (
@@ -301,7 +363,7 @@ export default function ConfiguratorPage() {
                       {t.label}
                     </div>
                     <div style={{ color: "#DC143C", fontFamily: "'Cinzel Decorative', serif", fontSize: "0.9rem" }}>
-                      от {t.price} лв
+                      от {t.price} {CURRENCY}
                     </div>
                   </button>
                 ))}
@@ -323,12 +385,13 @@ export default function ConfiguratorPage() {
                 Стъпка 2: Детайли на Случая
               </h2>
               <p style={{ color: "#8892A4", fontSize: "0.9rem", marginBottom: "2rem" }}>
-                Тези детайли ще бъдат вплетени в историята на случая.
+                Тези детайли ще бъдат вплетени в историята на случая. Полетата маркирани с * са задължителни.
               </p>
               {[
-                { key: "victimName" as const, label: "Име на жертвата", placeholder: "напр. Максим Велев", type: "text" },
+                { key: "email" as const, label: "Твоят Имейл (За контакт) *", placeholder: "напр. inspector@dosie.bg", type: "email" },
+                { key: "victimName" as const, label: "Име на жертвата *", placeholder: "напр. Максим Велев", type: "text" },
                 { key: "location" as const, label: "Локация", placeholder: "напр. Имение Черна Роза, Витоша", type: "text" },
-                { key: "playerName" as const, label: "Твоето Детективско Псевдоним", placeholder: "напр. Инспектор Данов", type: "text" },
+                { key: "playerName" as const, label: "Твоят Детективски Псевдоним *", placeholder: "напр. Инспектор Данов", type: "text" },
               ].map((field) => (
                 <div key={field.key} style={{ marginBottom: "1.25rem" }}>
                   <label
@@ -349,6 +412,7 @@ export default function ConfiguratorPage() {
                     value={form[field.key]}
                     onChange={(e) => updateForm(field.key, e.target.value)}
                     placeholder={field.placeholder}
+                    required
                     style={{
                       width: "100%",
                       background: "rgba(11,12,16,0.7)",
@@ -418,7 +482,7 @@ export default function ConfiguratorPage() {
                 Стъпка 3: Заподозрени
               </h2>
               <p style={{ color: "#8892A4", fontSize: "0.9rem", marginBottom: "2rem" }}>
-                Добави имената на приятелите/колегите си — те ще станат заподозрени!
+                Добави имената на приятелите/колегите си — те ще станат заподозрени в случая! (Въведете поне 2 заподозрени)
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", marginBottom: "1.25rem" }}>
                 {form.suspects.map((s, i) => (
@@ -526,7 +590,7 @@ export default function ConfiguratorPage() {
                 Стъпка 4: Резюме & Изпращане
               </h2>
               <p style={{ color: "#8892A4", fontSize: "0.9rem", marginBottom: "2rem" }}>
-                Прегледай данните си и изпрати заявката.
+                Прегледайте своите детективски записки преди изпращане по секретния канал.
               </p>
               <div
                 style={{
@@ -539,6 +603,7 @@ export default function ConfiguratorPage() {
               >
                 {[
                   { label: "Тема", value: selectedTheme?.label || "-" },
+                  { label: "Контактен Имейл", value: form.email || "-" },
                   { label: "Жертва", value: form.victimName || "-" },
                   { label: "Локация", value: form.location || "-" },
                   { label: "Детектив", value: form.playerName || "-" },
@@ -579,16 +644,18 @@ export default function ConfiguratorPage() {
                     ОРИЕНТИРОВЪЧНА ЦЕНА
                   </p>
                   <p style={{ color: "#DC143C", fontFamily: "'Cinzel Decorative', serif", fontSize: "1.8rem" }}>
-                    {selectedTheme?.price || "—"} лв
+                    {selectedTheme?.price || "—"} {CURRENCY}
                   </p>
                   <p style={{ color: "#8892A4", fontSize: "0.75rem" }}>
-                    Финалната цена след консултация
+                    Финалната цена ще се уточни при консултация
                   </p>
                 </div>
                 <span style={{ fontSize: "2.5rem" }}>{selectedTheme?.icon || "🎭"}</span>
               </div>
+
               <button
                 onClick={handleSubmit}
+                disabled={loading}
                 style={{
                   width: "100%",
                   background: "linear-gradient(135deg, #DC143C, #8B0000)",
@@ -598,16 +665,59 @@ export default function ConfiguratorPage() {
                   borderRadius: "4px",
                   fontFamily: "'Cinzel Decorative', serif",
                   fontSize: "1.1rem",
-                  cursor: "pointer",
+                  cursor: loading ? "not-allowed" : "pointer",
                   letterSpacing: "0.05em",
                   transition: "all 0.3s",
                   boxShadow: "0 4px 20px rgba(220,20,60,0.35)",
+                  opacity: loading ? 0.7 : 1,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "10px",
                 }}
-                onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-2px)"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; }}
+                onMouseEnter={(e) => { if(!loading) e.currentTarget.style.transform = "translateY(-2px)"; }}
+                onMouseLeave={(e) => { if(!loading) e.currentTarget.style.transform = "translateY(0)"; }}
               >
-                📨 Изпрати Заявката
+                {loading ? (
+                  <>
+                    <Loader2 size={20} className="animate-spin" />
+                    Изпращане на Досието...
+                  </>
+                ) : (
+                  <>
+                    📨 Изпрати Заявката
+                  </>
+                )}
               </button>
+
+              {errorMsg && (
+                <p style={{ color: "#DC143C", fontSize: "0.85rem", marginTop: "1rem", fontWeight: "bold", textAlign: "center" }}>
+                  ⚠️ {errorMsg}
+                </p>
+              )}
+
+              {!isSupabaseConfigured() && (
+                <div
+                  style={{
+                    background: "rgba(200,169,110,0.05)",
+                    border: "1px dashed rgba(200,169,110,0.3)",
+                    borderRadius: "4px",
+                    padding: "10px 14px",
+                    marginTop: "1.5rem",
+                    fontSize: "0.8rem",
+                    color: "#C8A96E",
+                    textAlign: "left",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "8px",
+                  }}
+                >
+                  <AlertTriangle size={14} style={{ color: "#C8A96E", flexShrink: 0 }} />
+                  <span>
+                    <strong>Режим на Демонстрация:</strong> Базата данни на Supabase не е свързана. Попълнете ключовете в <code>.env.local</code> файла, за да записвате реални поръчки.
+                  </span>
+                </div>
+              )}
             </div>
           )}
         </div>
@@ -649,23 +759,24 @@ export default function ConfiguratorPage() {
           {step < 4 && (
             <button
               onClick={() => {
-                if (step === 1 && !form.theme) return;
-                setStep((p) => (p + 1) as Step);
+                if (!nextDisabled) {
+                  setStep((p) => (p + 1) as Step);
+                }
               }}
-              disabled={step === 1 && !form.theme}
+              disabled={nextDisabled}
               style={{
                 background: "linear-gradient(135deg, #DC143C, #8B0000)",
                 color: "white",
                 border: "none",
                 padding: "10px 24px",
                 borderRadius: "4px",
-                cursor: step === 1 && !form.theme ? "not-allowed" : "pointer",
+                cursor: nextDisabled ? "not-allowed" : "pointer",
                 fontFamily: "'Cinzel Decorative', serif",
                 fontSize: "0.9rem",
                 display: "flex",
                 alignItems: "center",
                 gap: "6px",
-                opacity: step === 1 && !form.theme ? 0.5 : 1,
+                opacity: nextDisabled ? 0.5 : 1,
                 transition: "all 0.2s",
               }}
             >
@@ -681,7 +792,15 @@ export default function ConfiguratorPage() {
           from { opacity: 0; transform: translateX(10px); }
           to { opacity: 1; transform: translateX(0); }
         }
+        @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        .animate-spin {
+          animation: spin 1s linear infinite;
+        }
       `}</style>
     </div>
   );
 }
+

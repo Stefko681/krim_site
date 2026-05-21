@@ -28,8 +28,9 @@ html {
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  font-family: 'Inter', sans-serif;
-  line-height: 1.6;
+  font-family: 'EB Garamond', 'Inter', sans-serif;
+  font-size: 1.12rem;
+  line-height: 1.65;
   overflow-x: hidden;
 }
 
@@ -49,13 +50,32 @@ body {
 }
 
 
-/* Typography */
-.font-typewriter {
-  font-family: 'Cinzel Decorative', serif;
+/* Typography & Global Font Overrides for Cyrillic Support */
+h1 {
+  font-family: 'Yeseva One', 'Playfair Display', 'Cinzel Decorative', serif !important;
 }
 
-.font-mono-detective {
-  font-family: 'Courier Prime', monospace;
+h2, h3, h4, h5, h6,
+.font-typewriter,
+.btn-primary,
+.btn-secondary,
+[style*="Cinzel Decorative"],
+[style*="cinzel decorative"] {
+  font-family: 'Playfair Display', 'Yeseva One', 'Cinzel Decorative', serif !important;
+}
+
+.classified-stamp,
+.top-secret-stamp {
+  font-family: 'Kelly Slab', 'Courier Prime', monospace !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.15em !important;
+}
+
+.font-mono-detective,
+input, textarea, select,
+[style*="Courier Prime"],
+[style*="courier prime"] {
+  font-family: 'IBM Plex Mono', 'Courier Prime', monospace !important;
 }
 
 /* Grain texture overlay */

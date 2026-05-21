@@ -17,7 +17,7 @@ export default function Navbar() {
     { href: "/shop", label: "Досиета" },
     { href: "/configurator", label: "Custom Случай" },
     { href: "/guess", label: "Познай Убиеца" },
-    { href: "/portal", label: "Детективски Портал" },
+    { href: "/zhokeri", label: "Жокери" },
   ];
 
   return (
@@ -47,29 +47,26 @@ export default function Navbar() {
       >
         {/* Logo */}
         <Link href="/" style={{ textDecoration: "none" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-            <span
-              style={{
-                fontFamily: "'Cinzel Decorative', serif",
-                fontSize: "1.8rem",
-                color: "#DC143C",
-                letterSpacing: "0.12em",
-                textShadow: "0 0 15px rgba(220,20,60,0.4)",
-              }}
-            >
-              ДОСИЕ
-            </span>
-            <span
-              style={{
-                width: "8px",
-                height: "8px",
-                borderRadius: "50%",
-                backgroundColor: "#DC143C",
-                boxShadow: "0 0 8px rgba(220,20,60,0.8)",
-                display: "block",
-              }}
-            />
-          </div>
+          <img
+            src="/logo.png"
+            alt="It's Your Turn лого"
+            style={{
+              height: "58px",
+              width: "auto",
+              objectFit: "contain",
+              display: "block",
+              filter: "drop-shadow(0 2px 8px rgba(220,20,60,0.35))",
+              transition: "filter 0.3s ease, transform 0.3s ease",
+            }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLImageElement).style.filter = "drop-shadow(0 4px 16px rgba(220,20,60,0.6))";
+              (e.currentTarget as HTMLImageElement).style.transform = "scale(1.05)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLImageElement).style.filter = "drop-shadow(0 2px 8px rgba(220,20,60,0.35))";
+              (e.currentTarget as HTMLImageElement).style.transform = "scale(1)";
+            }}
+          />
         </Link>
 
         {/* Desktop nav */}

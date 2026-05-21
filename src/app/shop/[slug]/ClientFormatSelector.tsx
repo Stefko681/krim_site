@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { CURRENCY } from "@/lib/data";
 
 export function ClientFormatSelector({ priceDigital, pricePhysical }: { priceDigital: number, pricePhysical: number }) {
   const [format, setFormat] = useState<"digital" | "physical">("digital");
@@ -60,10 +61,10 @@ export function ClientFormatSelector({ priceDigital, pricePhysical }: { priceDig
         <div>
           <div style={{ color: "#8892A4", fontSize: "0.75rem", fontFamily: "'Cinzel Decorative', serif", letterSpacing: "0.1em" }}>ЦЕНА</div>
           <div style={{ color: "#DC143C", fontFamily: "'Cinzel Decorative', serif", fontSize: "2rem" }}>
-            {price} лв
+            {price} {CURRENCY}
           </div>
           {format === "physical" && (
-            <div style={{ color: "#8892A4", fontSize: "0.75rem" }}>+ 5 лв доставка</div>
+            <div style={{ color: "#8892A4", fontSize: "0.75rem" }}>+ 5 {CURRENCY} доставка</div>
           )}
         </div>
         <button

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { cases } from "@/lib/data";
+import { cases, CURRENCY } from "@/lib/data";
 import { Clock, Users, Star, Filter } from "lucide-react";
 
 export default function ShopPage() {
@@ -294,7 +294,7 @@ function ShopCard({ c }: { c: (typeof cases)[0] }) {
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
           <div>
             <span style={{ color: "#DC143C", fontFamily: "'Cinzel Decorative', serif", fontSize: "1.3rem" }}>
-              {format === "digital" ? c.priceDigital : c.pricePhysical} лв
+              {format === "digital" ? c.priceDigital : c.pricePhysical} {CURRENCY}
             </span>
             {format === "physical" && (
               <span style={{ color: "#8892A4", fontSize: "0.75rem", marginLeft: "6px" }}>

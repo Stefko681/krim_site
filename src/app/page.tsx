@@ -2,8 +2,9 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { cases, testimonials } from "@/lib/data";
-import { ChevronLeft, ChevronRight, Star, Clock, Users, AlertTriangle, Mail, Eye } from "lucide-react";
+import { cases, testimonials, CURRENCY } from "@/lib/data";
+import { ChevronLeft, ChevronRight, Star, Clock, Users, AlertTriangle, Mail, Eye, Loader2 } from "lucide-react";
+import { supabase, isSupabaseConfigured } from "@/lib/supabaseClient";
 
 // ── HERO SECTION ──────────────────────────────────────────────────────────
 function HeroSection() {
@@ -232,7 +233,7 @@ function HeroSection() {
             letterSpacing: "0.1em",
           }}
         >
-          <span>СКРОЛИРАЙ</span>
+          <span></span>
           <span style={{ animation: "blink 1.5s ease infinite" }}>↓</span>
         </div>
       </div>
@@ -252,20 +253,60 @@ function LeadMagnet() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [showAnswer, setShowAnswer] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
 
   const riddle = {
     question:
-      "Детективът открива тялото в закрита стая. Прозорците са заключени отвътре. Вратата — също. Липсва само едно нещо от масата. Какво е то, ако убиецът е трябвало да излезе?",
+      "Мъж е намерен мъртъв в кабинета си. В едната си ръка държи пистолет, а в другата – диктофон. Детективът влиза, натиска бутона за пускане и чува гласа на жертвата: „ Не мога да живея повече така, това е краят...“, последвано от изстрел. Записът спира. Детективът веднага разбира, че това е убийство. Защо?",
     image: "🔍",
     answer:
-      "Ключ! Убиецът е използвал восък, за да направи отпечатък на ключа. После е излязъл, заключил вратата отвън и е върнал оригиналния ключ на масата — но СВОЯ ключ е носил у себе си. Стаята е 'заключена', но не е непристъпна.",
+      "Ако мъжът се беше самоубил, нямаше как сам да превърти записа отначало, преди детективът да го открие и да го пусне с едно натискане.",
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
+    if (!email) return;
+
+    setLoading(true);
+    setErrorMsg(null);
+
+    try {
+      if (isSupabaseConfigured()) {
+        const { error } = await supabase
+          .from("leads")
+          .insert([{ email, source: "lead_magnet_riddle" }]);
+
+        if (error) {
+          // If error code is 23505 (unique violation), it means email already exists.
+          // This is fine, we don't need to block them, just let them see the answer!
+          if (error.code === "23505") {
+            console.log("Email already registered in Supabase. Proceeding to answer.");
+          } else {
+            throw new Error(error.message);
+          }
+        }
+      } else {
+        // Fallback for development/demo mode before Supabase credentials are put in
+        console.warn("Supabase is not configured yet. Saving locally to localStorage for demonstration.");
+        try {
+          const demoLeads = JSON.parse(localStorage.getItem("demo_leads") || "[]");
+          if (!demoLeads.includes(email)) {
+            demoLeads.push(email);
+            localStorage.setItem("demo_leads", JSON.stringify(demoLeads));
+          }
+        } catch (storageErr) {
+          // silent fail
+        }
+      }
+
       setSubmitted(true);
       setTimeout(() => setShowAnswer(true), 800);
+    } catch (err: any) {
+      console.error("Error saving email:", err);
+      setErrorMsg("Възникна системна грешка при разследването. Моля, опитайте отново.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -373,6 +414,7 @@ function LeadMagnet() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="твоя.имейл@dosie.bg"
                   required
+                  disabled={loading}
                   style={{
                     background: "rgba(11,12,16,0.8)",
                     border: "1px solid rgba(200,169,110,0.3)",
@@ -387,6 +429,7 @@ function LeadMagnet() {
                 />
                 <button
                   type="submit"
+                  disabled={loading}
                   style={{
                     background: "linear-gradient(135deg, #DC143C, #8B0000)",
                     color: "white",
@@ -395,18 +438,53 @@ function LeadMagnet() {
                     borderRadius: "4px",
                     fontFamily: "'Cinzel Decorative', serif",
                     fontSize: "0.95rem",
-                    cursor: "pointer",
+                    cursor: loading ? "not-allowed" : "pointer",
                     letterSpacing: "0.05em",
                     display: "flex",
                     alignItems: "center",
                     gap: "8px",
                     transition: "all 0.3s",
+                    opacity: loading ? 0.7 : 1,
                   }}
                 >
-                  <Eye size={16} />
-                  Разкрий Отговора
+                  {loading ? (
+                    <Loader2 size={16} className="animate-spin" />
+                  ) : (
+                    <Eye size={16} />
+                  )}
+                  {loading ? "Разследване..." : "Разкрий Отговора"}
                 </button>
               </form>
+
+              {errorMsg && (
+                <p style={{ color: "#DC143C", fontSize: "0.85rem", marginTop: "1rem", fontWeight: "bold" }}>
+                  ⚠️ {errorMsg}
+                </p>
+              )}
+
+              {!isSupabaseConfigured() && (
+                <div
+                  style={{
+                    background: "rgba(200,169,110,0.05)",
+                    border: "1px dashed rgba(200,169,110,0.3)",
+                    borderRadius: "4px",
+                    padding: "10px 14px",
+                    marginTop: "1.5rem",
+                    fontSize: "0.8rem",
+                    color: "#C8A96E",
+                    textAlign: "left",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "8px",
+                  }}
+                >
+                  <AlertTriangle size={14} style={{ color: "#C8A96E", flexShrink: 0 }} />
+                  <span>
+                    <strong>Режим на Демонстрация:</strong> Базата данни на Supabase не е свързана. Попълнете ключовете в <code>.env.local</code> файла, за да запазвате реални имейли.
+                  </span>
+                </div>
+              )}
+
               <p style={{ color: "#8892A4", fontSize: "0.75rem", marginTop: "0.75rem" }}>
                 📪 Не изпращаме спам. Само нови случаи и загадки.
               </p>
@@ -463,6 +541,13 @@ function LeadMagnet() {
         @keyframes fadeIn {
           from { opacity: 0; transform: translateY(10px); }
           to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        .animate-spin {
+          animation: spin 1s linear infinite;
         }
       `}</style>
     </section>
@@ -773,7 +858,7 @@ function CaseCard({ c }: { c: (typeof cases)[0] }) {
                 fontSize: "1.2rem",
               }}
             >
-              от {c.priceDigital} лв
+              от {c.priceDigital} {CURRENCY}
             </span>
           </div>
           <Link
