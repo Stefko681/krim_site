@@ -76,10 +76,12 @@ export default function Footer() {
             Навигация
           </h4>
           {[
-            { href: "/shop", label: "Магазин — Досиета" },
+          { href: "/dosieta", label: "Досиета" },
+            { href: "/shop", label: "Купи" },
             { href: "/configurator", label: "Custom Случай" },
             { href: "/zhokeri", label: "Жокери" },
-            { href: "/admin", label: "Администрация" },
+            { href: "/privacy", label: "Поверителност" },
+            { href: "/cookies", label: "Бисквитки" },
           ].map((link) => (
             <Link
               key={link.href}
@@ -158,15 +160,46 @@ export default function Footer() {
             fontFamily: "'Cinzel Decorative', serif",
           }}
         >
-          © 2025 ДОСИЕ. Всички права запазени.
+          © 2026 ДОСИЕ. Всички права запазени.
         </p>
         <div
           style={{
             display: "flex",
             gap: "1rem",
             alignItems: "center",
+            flexWrap: "wrap",
           }}
         >
+          <Link
+            href="/privacy"
+            style={{
+              color: "#8892A4",
+              textDecoration: "none",
+              fontSize: "0.78rem",
+              fontFamily: "'IBM Plex Mono', monospace",
+              transition: "color 0.2s",
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.color = "#C8A96E"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.color = "#8892A4"; }}
+          >
+            Поверителност
+          </Link>
+          <span style={{ color: "rgba(200,169,110,0.3)", fontSize: "0.7rem" }}>|</span>
+          <Link
+            href="/cookies"
+            style={{
+              color: "#8892A4",
+              textDecoration: "none",
+              fontSize: "0.78rem",
+              fontFamily: "'IBM Plex Mono', monospace",
+              transition: "color 0.2s",
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.color = "#C8A96E"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.color = "#8892A4"; }}
+          >
+            Бисквитки
+          </Link>
+          <span style={{ color: "rgba(200,169,110,0.3)", fontSize: "0.7rem" }}>|</span>
           <span
             style={{
               border: "2px solid rgba(220,20,60,0.5)",

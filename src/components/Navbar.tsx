@@ -14,7 +14,7 @@ export default function Navbar() {
   }, []);
 
   const links = [
-    { href: "/shop", label: "Досиета" },
+    { href: "/dosieta", label: "Досиета" },
     { href: "/configurator", label: "Custom Случай" },
     { href: "/guess", label: "Познай Убиеца" },
     { href: "/zhokeri", label: "Жокери" },
@@ -43,10 +43,11 @@ export default function Navbar() {
           alignItems: "center",
           justifyContent: "space-between",
           height: "72px",
+          position: "relative",
         }}
       >
-        {/* Logo */}
-        <Link href="/" style={{ textDecoration: "none" }}>
+        {/* Logo (left aligned) */}
+        <Link href="/" style={{ textDecoration: "none", zIndex: 10, display: "flex", alignItems: "center" }}>
           <img
             src="/logo.png"
             alt="It's Your Turn лого"
@@ -69,14 +70,18 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Desktop nav */}
+        {/* Centered Desktop Menu */}
         <div
+          className="desktop-nav-menu"
           style={{
+            position: "absolute",
+            left: "50%",
+            transform: "translateX(-50%)",
             display: "flex",
             alignItems: "center",
             gap: "2rem",
+            zIndex: 5,
           }}
-          className="desktop-nav"
         >
           {links.map((link) => (
             <Link
@@ -102,27 +107,19 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+        </div>
 
-          <Link
-            href="/admin"
-            style={{
-              color: "#8892A4",
-              textDecoration: "none",
-              fontSize: "0.8rem",
-              borderLeft: "1px solid rgba(200,169,110,0.2)",
-              paddingLeft: "1.5rem",
-              display: "flex",
-              alignItems: "center",
-              gap: "5px",
-              transition: "color 0.2s",
-              fontFamily: "'Cinzel Decorative', serif",
-            }}
-            onMouseEnter={(e) => { e.currentTarget.style.color = "#C8A96E"; }}
-            onMouseLeave={(e) => { e.currentTarget.style.color = "#8892A4"; }}
-          >
-            <FileText size={14} />
-            Архив
-          </Link>
+        {/* Right Actions (button and archive) */}
+        <div
+          className="desktop-nav-actions"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "1.5rem",
+            zIndex: 10,
+          }}
+        >
+
 
           <Link
             href="/shop"
@@ -151,7 +148,7 @@ export default function Navbar() {
             }}
           >
             <ShoppingCart size={16} />
-            Магазин
+            Купи
           </Link>
         </div>
 
@@ -164,6 +161,7 @@ export default function Navbar() {
             color: "#C8A96E",
             cursor: "pointer",
             display: "none",
+            zIndex: 10,
           }}
           className="mobile-menu-btn"
         >
@@ -203,8 +201,9 @@ export default function Navbar() {
       )}
 
       <style>{`
-        @media (max-width: 768px) {
-          .desktop-nav { display: none !important; }
+        @media (max-width: 992px) {
+          .desktop-nav-menu { display: none !important; }
+          .desktop-nav-actions { display: none !important; }
           .mobile-menu-btn { display: block !important; }
         }
       `}</style>

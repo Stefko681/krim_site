@@ -2,17 +2,32 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CookieBanner from "@/components/CookieBanner";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://dosie.bg"),
   title: "ДОСИЕ — Криминални Мистерии и Настолни Игри",
   description:
     "Потопете се в света на детективите. Разкрийте убийства, разгадайте шифри и повдигнете обвинения. Custom криминални мистерии за партита, сватби и корпоративни събития.",
   keywords: "криминална мистерия, настолни игри, детектив, убийство в тъмното, murder mystery, България",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
   openGraph: {
     title: "ДОСИЕ — Криминални Мистерии",
     description: "Разплети мистерията. Ти си детективът.",
     locale: "bg_BG",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "ДОСИЕ — Криминални Мистерии",
+      },
+    ],
   },
 };
 
@@ -33,6 +48,7 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <CookieBanner />
       </body>
     </html>
   );

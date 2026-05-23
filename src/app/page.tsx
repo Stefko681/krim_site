@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { cases, testimonials, CURRENCY } from "@/lib/data";
-import { ChevronLeft, ChevronRight, Star, Clock, Users, AlertTriangle, Mail, Eye, Loader2 } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star, Clock, Users, Mail, Eye, Loader2 } from "lucide-react";
 import { supabase, isSupabaseConfigured } from "@/lib/supabaseClient";
 
 // ── HERO SECTION ──────────────────────────────────────────────────────────
@@ -162,7 +162,7 @@ function HeroSection() {
           }}
         >
           <Link
-            href="/shop"
+            href="/dosieta"
             style={{
               background: "linear-gradient(135deg, #DC143C, #8B0000)",
               color: "white",
@@ -213,6 +213,7 @@ function HeroSection() {
           >
             ✏️ Създай Custom Случай
           </Link>
+
         </div>
 
         {/* Scroll indicator */}
@@ -460,29 +461,6 @@ function LeadMagnet() {
                 <p style={{ color: "#DC143C", fontSize: "0.85rem", marginTop: "1rem", fontWeight: "bold" }}>
                   ⚠️ {errorMsg}
                 </p>
-              )}
-
-              {!isSupabaseConfigured() && (
-                <div
-                  style={{
-                    background: "rgba(200,169,110,0.05)",
-                    border: "1px dashed rgba(200,169,110,0.3)",
-                    borderRadius: "4px",
-                    padding: "10px 14px",
-                    marginTop: "1.5rem",
-                    fontSize: "0.8rem",
-                    color: "#C8A96E",
-                    textAlign: "left",
-                    display: "flex",
-                    alignItems: "center",
-                    gap: "8px",
-                  }}
-                >
-                  <AlertTriangle size={14} style={{ color: "#C8A96E", flexShrink: 0 }} />
-                  <span>
-                    <strong>Режим на Демонстрация:</strong> Базата данни на Supabase не е свързана. Попълнете ключовете в <code>.env.local</code> файла, за да запазвате реални имейли.
-                  </span>
-                </div>
               )}
 
               <p style={{ color: "#8892A4", fontSize: "0.75rem", marginTop: "0.75rem" }}>
@@ -1041,102 +1019,6 @@ function Testimonials() {
   );
 }
 
-// ── HOW IT WORKS ──────────────────────────────────────────────────────────
-function HowItWorks() {
-  const steps = [
-    { num: "01", icon: "📦", title: "Поръчай Досие", desc: "Избери физическа кутия или PDF за сваляне. Доставка до 2-3 дни." },
-    { num: "02", icon: "🔍", title: "Разследвай", desc: "Прочети досиетата, анализирай уликите и разпитай заподозрените." },
-    { num: "03", icon: "💡", title: "Ползвай Жокери", desc: "Ако заседнеш — влез в Детективския Портал с кода от кутията." },
-    { num: "04", icon: "⚖️", title: "Повдигни Обвинение", desc: "Разкрий убиеца в портала и вземи своята присъда!" },
-  ];
-
-  return (
-    <section
-      style={{
-        maxWidth: "1200px",
-        margin: "8rem auto 0",
-        padding: "0 1.5rem",
-      }}
-    >
-      <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-        <h2
-          style={{
-            fontFamily: "'Cinzel Decorative', serif",
-            fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
-            color: "#E8E8E8",
-            marginBottom: "0.5rem",
-          }}
-        >
-          Как Работи
-        </h2>
-        <div
-          style={{
-            height: "2px",
-            background: "linear-gradient(90deg, transparent, #C8A96E, transparent)",
-            maxWidth: "300px",
-            margin: "0 auto",
-          }}
-        />
-      </div>
-
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
-          gap: "2rem",
-        }}
-      >
-        {steps.map((step, i) => (
-          <div
-            key={step.num}
-            style={{
-              textAlign: "center",
-              padding: "2rem 1.5rem",
-              borderTop: `2px solid ${i % 2 === 0 ? "#DC143C" : "#C8A96E"}`,
-              background: "rgba(31,40,51,0.3)",
-              borderRadius: "0 0 6px 6px",
-              transition: "transform 0.3s, box-shadow 0.3s",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "translateY(-4px)";
-              e.currentTarget.style.boxShadow = "0 10px 30px rgba(0,0,0,0.3)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "none";
-            }}
-          >
-            <div
-              style={{
-                fontFamily: "'Cinzel Decorative', serif",
-                color: "rgba(200,169,110,0.2)",
-                fontSize: "3.5rem",
-                lineHeight: 1,
-                marginBottom: "0.5rem",
-              }}
-            >
-              {step.num}
-            </div>
-            <div style={{ fontSize: "2rem", marginBottom: "0.75rem" }}>{step.icon}</div>
-            <h3
-              style={{
-                fontFamily: "'Cinzel Decorative', serif",
-                color: "#E8E8E8",
-                fontSize: "1.1rem",
-                marginBottom: "0.75rem",
-              }}
-            >
-              {step.title}
-            </h3>
-            <p style={{ color: "#8892A4", fontSize: "0.9rem", lineHeight: 1.6 }}>
-              {step.desc}
-            </p>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-}
 
 // ── CTA BANNER ────────────────────────────────────────────────────────────
 function CTABanner() {
@@ -1405,10 +1287,8 @@ export default function HomePage() {
       <HeroSection />
       <LeadMagnet />
       <FeaturedCases />
-      <GuessTeaser />
-      <HowItWorks />
       <Testimonials />
-      <CTABanner />
+
     </>
   );
 }

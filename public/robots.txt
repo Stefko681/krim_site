@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Block private/utility pages
+Disallow: /api/
+
+Sitemap: https://dosie.bg/sitemap.xml
