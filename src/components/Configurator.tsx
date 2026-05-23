@@ -335,7 +335,7 @@ export default function Configurator() {
               <p style={{ color: "#8892A4", fontSize: "0.9rem", marginBottom: "2rem" }}>
                 Темата определя сценария и реквизита на случая.
               </p>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+              <div className="themes-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
                 {themes.map((t) => (
                   <button
                     key={t.id}

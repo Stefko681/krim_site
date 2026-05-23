@@ -59,6 +59,7 @@ export default function DosietaPage() {
       <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "3rem 1.5rem" }}>
         {/* Filters */}
         <div
+          className="dosieta-filters"
           style={{
             display: "flex",
             gap: "1rem",
@@ -118,6 +119,7 @@ export default function DosietaPage() {
 
         {/* Grid */}
         <div
+          className="dosieta-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",

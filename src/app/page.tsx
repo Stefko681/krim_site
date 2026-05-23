@@ -84,6 +84,7 @@ function HeroSection() {
 
       {/* Content */}
       <div
+        className="hero-content"
         style={{
           position: "relative",
           zIndex: 2,
@@ -152,6 +153,7 @@ function HeroSection() {
         </p>
 
         <div
+          className="hero-buttons"
           style={{
             display: "flex",
             gap: "1rem",
@@ -313,6 +315,7 @@ function LeadMagnet() {
 
   return (
     <section
+      className="mobile-section"
       style={{
         maxWidth: "800px",
         margin: "8rem auto 0",
@@ -320,6 +323,7 @@ function LeadMagnet() {
       }}
     >
       <div
+        className="lead-card"
         style={{
           background: "linear-gradient(135deg, #1a1108 0%, #1F2833 60%, #1a1108 100%)",
           border: "1px solid rgba(200,169,110,0.25)",
@@ -402,6 +406,7 @@ function LeadMagnet() {
               </p>
               <form
                 onSubmit={handleSubmit}
+                className="lead-form-row"
                 style={{
                   display: "flex",
                   gap: "0.75rem",
@@ -424,6 +429,7 @@ function LeadMagnet() {
                     borderRadius: "4px",
                     fontSize: "0.9rem",
                     width: "300px",
+                    maxWidth: "100%",
                     fontFamily: "'Courier Prime', monospace",
                     outline: "none",
                   }}
@@ -904,6 +910,7 @@ function Testimonials() {
       </div>
 
       <div
+        className="testimonials-grid"
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fit, minmax(270px, 1fr))",
@@ -1031,6 +1038,7 @@ function CTABanner() {
       }}
     >
       <div
+        className="cta-inner"
         style={{
           background: "linear-gradient(135deg, rgba(220,20,60,0.1) 0%, rgba(139,0,0,0.15) 100%)",
           border: "1px solid rgba(220,20,60,0.25)",
@@ -1113,6 +1121,7 @@ function GuessTeaser() {
       }}
     >
       <div
+        className="guess-teaser-inner"
         style={{
           background: "linear-gradient(135deg, #12050a 0%, #1F2833 50%, #0d1a0d 100%)",
           border: "1px solid rgba(220,20,60,0.2)",
@@ -1223,7 +1232,7 @@ function GuessTeaser() {
             Виж дали инстинктът ти е на ниво детектив — без да купуваш нищо.
           </p>
 
-          <div style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", alignItems: "center" }}>
+          <div className="guess-actions" style={{ display: "flex", gap: "0.75rem", flexWrap: "wrap", alignItems: "center" }}>
             <Link
               href="/guess"
               style={{

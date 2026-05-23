@@ -143,6 +143,7 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div
+        className="footer-bottom"
         style={{
           borderTop: "1px solid rgba(200,169,110,0.1)",
           paddingTop: "1.5rem",
@@ -163,6 +164,7 @@ export default function Footer() {
           © 2026 ДОСИЕ. Всички права запазени.
         </p>
         <div
+          className="footer-bottom-links"
           style={{
             display: "flex",
             gap: "1rem",

@@ -91,7 +91,7 @@ export default function ZhokeriPage() {
           </p>
 
           {/* Case buttons for quick reference */}
-          <div style={{
+          <div className="zhokeri-cases-grid" style={{
             display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "0.5rem",
             marginBottom: "2rem",
           }}>

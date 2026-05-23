@@ -172,13 +172,14 @@ export default function Navbar() {
       {/* Mobile menu */}
       {isOpen && (
         <div
+          className="mobile-menu-overlay"
           style={{
-            background: "rgba(11,12,16,0.98)",
+            background: "rgba(11,12,16,0.97)",
             borderTop: "1px solid rgba(200,169,110,0.15)",
             padding: "1.5rem",
             display: "flex",
             flexDirection: "column",
-            gap: "1.5rem",
+            gap: "0",
           }}
         >
           {links.map((link) => (
@@ -190,13 +191,37 @@ export default function Navbar() {
                 color: "#C8A96E",
                 textDecoration: "none",
                 fontFamily: "'Cinzel Decorative', serif",
-                fontSize: "1.1rem",
+                fontSize: "1.05rem",
                 letterSpacing: "0.06em",
+                padding: "1rem 0",
+                borderBottom: "1px solid rgba(200,169,110,0.08)",
+                display: "block",
               }}
             >
               {link.label}
             </Link>
           ))}
+          {/* Купи CTA button */}
+          <Link
+            href="/shop"
+            onClick={() => setIsOpen(false)}
+            style={{
+              background: "linear-gradient(135deg, #DC143C, #8B0000)",
+              color: "white",
+              textDecoration: "none",
+              padding: "14px 20px",
+              borderRadius: "4px",
+              fontFamily: "'Cinzel Decorative', serif",
+              fontSize: "1rem",
+              letterSpacing: "0.05em",
+              textAlign: "center",
+              display: "block",
+              marginTop: "1.25rem",
+              boxShadow: "0 4px 15px rgba(220,20,60,0.3)",
+            }}
+          >
+            🛒 Купи Досие
+          </Link>
         </div>
       )}
 
